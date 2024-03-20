@@ -1908,32 +1908,12 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10011.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10008.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1946,16 +1926,6 @@ action
       <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10011.options.disable">
-        <value>
-          <boolean>false</boolean>
-        </value>
-      </option>
-      <option name="extensions.10007.options.discover">
-        <value>
-          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -2154,32 +2124,11 @@ action
         </value>
       </option>
     </options>
-    <binders>
-      <cpnbinder id="ID1412380832"
-                 x="590"
-                 y="20"
-                 width="1823"
-                 height="1277">
-        <sheets>
-          <cpnsheet id="ID1412380661"
-                    panx="22.000000"
-                    pany="112.000000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-        </sheets>
-        <zorder>
-          <position value="0"/>
-        </zorder>
-      </cpnbinder>
-    </binders>
+    <binders/>
     <monitorblock name="Monitors">
       <monitorblock name="New monitor block"/>
     </monitorblock>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="true"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -2242,16 +2191,6 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-        </IndexNode>
-        <IndexNode expanded="false">
-          <IndexNode expanded="false"/>
-        </IndexNode>
-        <IndexNode expanded="false">
-          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
@@ -2261,7 +2200,7 @@ action
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2270,7 +2209,7 @@ action
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2279,7 +2218,7 @@ action
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -2287,7 +2226,7 @@ action
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
         </IndexNode>
         <IndexNode expanded="true">
