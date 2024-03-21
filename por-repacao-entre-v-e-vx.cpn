@@ -44,6 +44,21 @@
       </block>
       <block id="ID1412310166">
         <id>Standard priorities</id>
+        <ml id="ID1412752242">val LON_RAN = 0.5;
+          <layout>val LON_RAN = 0.5;</layout>
+        </ml>
+        <ml id="ID1412751980">val LAT_RAN = 0.5;
+          <layout>val LAT_RAN = 0.5;</layout>
+        </ml>
+        <ml id="ID1412749640">val TIME_STAMP = 0.1;
+          <layout>val TIME_STAMP = 0.1;</layout>
+        </ml>
+        <ml id="ID1412749550">val T_VRAN = 0.5;
+          <layout>val T_VRAN = 0.5;</layout>
+        </ml>
+        <ml id="ID1412749477">val T_CURRENT = 0.5;
+          <layout>val T_CURRENT = 0.5;</layout>
+        </ml>
         <ml id="ID1412310255">val P_HIGH = 100;
           <layout>val P_HIGH = 100;</layout>
         </ml>
@@ -162,14 +177,14 @@
       </block>
       <block id="ID1412712230">
         <id>PoR functions</id>
-        <ml id="ID1412732885">fun calculateFpor(vdata: VDATA) = ( ( (#4 vdata / 0.5) + ( (#1 (#5 vdata)) + (#2 (#5 vdata))  )  ) / 2.0 );
-          <layout>fun calculateFpor(vdata: VDATA) = ( ( (#4 vdata / 0.5) + ( (#1 (#5 vdata)) + (#2 (#5 vdata))  )  ) / 2.0 );</layout>
+        <ml id="ID1412732885">fun calculateFpor(vdata: VDATA) = ( ( (#4 vdata / T_CURRENT) + (( (#1 (#5 vdata)) + (#2 (#5 vdata))) / (LAT_RAN + LON_RAN) )  ) / 2.0 );
+          <layout>fun calculateFpor(vdata: VDATA) = ( ( (#4 vdata / T_CURRENT) + (( (#1 (#5 vdata)) + (#2 (#5 vdata))) / (LAT_RAN + LON_RAN) )  ) / 2.0 );</layout>
         </ml>
         <ml id="ID1412723047">fun returnScore(vdata: VDATA) = #2 vdata;
           <layout>fun returnScore(vdata: VDATA) = #2 vdata;</layout>
         </ml>
-        <ml id="ID1412711715">fun calculateSW(vdata: VDATA) = true;
-          <layout>fun calculateSW(vdata: VDATA) = true;</layout>
+        <ml id="ID1412711715">fun calculateSW(vdata: VDATA) = if ((#3 vdata) &gt;= (T_VRAN - TIME_STAMP) andalso (#3 vdata) &lt;= (T_VRAN + TIME_STAMP)) then true else false;
+          <layout>fun calculateSW(vdata: VDATA) = if ((#3 vdata) &gt;= (T_VRAN - TIME_STAMP) andalso (#3 vdata) &lt;= (T_VRAN + TIME_STAMP)) then true else false;</layout>
         </ml>
       </block>
     </globbox>
@@ -213,8 +228,8 @@
                 version="4.0.1">VDATA</text>
         </type>
         <initmark id="ID1412704545">
-          <posattr x="-495.000000"
-                   y="524.000000"/>
+          <posattr x="-414.000000"
+                   y="552.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -224,7 +239,11 @@
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">1`(1, 4.0, 0.5, 0.5, (0.5, 0.5))++
+1`(2, 3.5, 0.4, 0.3, (0.28, 0.34))++
+1`(3, 4.8, 0.3, 0.13, (0.78, 0.34))++
+1`(4, 3.0, 0.8, 0.3, (0.1, 0.2))++
+1`(5, 4.9, 0.8, 0.3, (0.23, 0.22))</text>
         </initmark>
         <port id="ID1412704741"
               type="In">
@@ -483,7 +502,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>Calcula SW</text>
@@ -560,7 +579,7 @@ action
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>Verifica score de Vx</text>
@@ -637,7 +656,7 @@ action
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>Calcula Fpor de V&apos;</text>
@@ -779,7 +798,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if sw = false then empty else 1`vdata</text>
+                version="4.0.1">if sw = false then 1`vdata else empty</text>
         </annot>
       </arc>
       <arc id="ID1412716694"
@@ -1045,12 +1064,12 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1060,7 +1079,7 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1263,14 +1282,14 @@ action
     </options>
     <binders>
       <cpnbinder id="ID2222"
-                 x="812"
-                 y="33"
-                 width="1902"
-                 height="989">
+                 x="980"
+                 y="46"
+                 width="1176"
+                 height="966">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="162.000000"
-                    pany="56.000000"
+                    panx="452.000000"
+                    pany="171.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
@@ -1366,20 +1385,6 @@ action
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-        </IndexNode>
-        <IndexNode expanded="true">
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-        </IndexNode>
-        <IndexNode expanded="true">
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -1389,6 +1394,25 @@ action
         <IndexNode expanded="true">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+        <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+        <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
         </IndexNode>
       </IndexNode>
