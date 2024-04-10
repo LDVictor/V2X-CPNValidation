@@ -153,8 +153,8 @@
                  h="64.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="292.000000"
-                 y="-4.000000"
+        <marking x="130.080000"
+                 y="-42.560000"
                  hidden="false">
           <snap snap_id="0"
                 anchor.horizontal="1"
@@ -448,7 +448,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>V envia a mensagem pendente ao RAN</text>
@@ -522,7 +522,7 @@
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>RAN checa credencial no VDR</text>
@@ -599,7 +599,7 @@ action
                   filled="false"/>
         <lineattr colour="Black"
                   thick="1"
-                  type="Solid"/>
+                  type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
         <text>RAN checa rep_score</text>
@@ -976,7 +976,27 @@ action
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -991,32 +1011,12 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10008.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10011.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10004.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -1227,30 +1227,9 @@ action
         </value>
       </option>
     </options>
-    <binders>
-      <cpnbinder id="ID2222"
-                 x="749"
-                 y="72"
-                 width="1726"
-                 height="1176">
-        <sheets>
-          <cpnsheet id="ID2215"
-                    panx="37.000000"
-                    pany="100.000000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-        </sheets>
-        <zorder>
-          <position value="0"/>
-        </zorder>
-      </cpnbinder>
-    </binders>
+    <binders/>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -1346,15 +1325,15 @@ action
         <IndexNode expanded="true">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
         </IndexNode>
       </IndexNode>
