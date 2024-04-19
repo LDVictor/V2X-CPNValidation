@@ -173,6 +173,16 @@
           </list>
           <layout>colset FPORS = list FPOR;</layout>
         </color>
+        <color id="ID1413461188">
+          <id>MPC</id>
+          <int>
+            <with>
+              <ml>1</ml>
+              <ml>5</ml>
+            </with>
+          </int>
+          <layout>colset MPC = int with 1..5;</layout>
+        </color>
         <ml id="ID1413302596">val vdr_content: VDR = [&quot;sdfe296nvb&quot;, &quot;hnm42kcmt0&quot;, 
 &quot;1nmc903dcr&quot;, &quot;d0sm94kzxc&quot;, &quot;0dmc9efj32&quot;];
           <layout>val vdr_content: VDR = [&quot;sdfe296nvb&quot;, &quot;hnm42kcmt0&quot;, 
@@ -199,12 +209,26 @@
           <id>rep_score</id>
           <layout>var rep_score: REP_SCORE;</layout>
         </var>
+        <var id="ID1413536080">
+          <type>
+            <id>INT</id>
+          </type>
+          <id>id</id>
+          <layout>var id: INT;</layout>
+        </var>
         <var id="ID1412849359">
           <type>
             <id>VC</id>
           </type>
           <id>vc</id>
           <layout>var vc: VC;</layout>
+        </var>
+        <var id="ID1413518604">
+          <type>
+            <id>MPC</id>
+          </type>
+          <id>mpc</id>
+          <layout>var mpc: MPC;</layout>
         </var>
         <var id="ID1412887091">
           <type>
@@ -311,16 +335,30 @@
         <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = (sumFpors(fpors)) / real (List.length fpors);
           <layout>fun calculateIC(fpors: FPORS) = (sumFpors(fpors)) / real (List.length fpors);</layout>
         </ml>
-        <ml id="ID1413295515">fun mpcVehicles() = 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)),
-(2, 3.5, 0.4, 0.3, (0.28, 0.34)),
+        <ml id="ID1413295515">fun mpcVehicles(mpc: INT) = 
+if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 3.5, 0.4, 0.3, (0.28, 0.34)), 
 (3, 4.8, 0.3, 0.13, (0.78, 0.34)),
 (4, 3.0, 0.8, 0.3, (0.1, 0.2)),
-(5, 4.9, 0.8, 0.3, (0.23, 0.22))]
-          <layout>fun mpcVehicles() = 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)),
+(5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
+else
+1`[(1, 4.0, 0.45, 0.48, (0.45, 0.53)),
 (2, 3.5, 0.4, 0.3, (0.28, 0.34)),
+(3, 4.7, 0.5, 0.53, (0.48, 0.44)),
+(4, 3.4, 0.8, 0.3, (0.1, 0.2)),
+(5, 4.9, 0.5, 0.48, (0.43, 0.42))];
+          <layout>fun mpcVehicles(mpc: INT) = 
+if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 3.5, 0.4, 0.3, (0.28, 0.34)), 
 (3, 4.8, 0.3, 0.13, (0.78, 0.34)),
 (4, 3.0, 0.8, 0.3, (0.1, 0.2)),
-(5, 4.9, 0.8, 0.3, (0.23, 0.22))]</layout>
+(5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
+else
+1`[(1, 4.0, 0.45, 0.48, (0.45, 0.53)),
+(2, 3.5, 0.4, 0.3, (0.28, 0.34)),
+(3, 4.7, 0.5, 0.53, (0.48, 0.44)),
+(4, 3.4, 0.8, 0.3, (0.1, 0.2)),
+(5, 4.9, 0.5, 0.48, (0.43, 0.42))];</layout>
         </ml>
         <ml id="ID1413303960">fun checkVCinVDR(v_msg: V_MSG) = if (mem vdr_content (#2 v_msg)) then true else false;
           <layout>fun checkVCinVDR(v_msg: V_MSG) = if (mem vdr_content (#2 v_msg)) then true else false;</layout>
@@ -348,11 +386,11 @@
                  h="68.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="-89.000000"
-                 y="54.000000"
+        <marking x="341.000000"
+                 y="112.000000"
                  hidden="false">
           <snap snap_id="0"
-                anchor.horizontal="2"
+                anchor.horizontal="1"
                 anchor.vertical="2"/>
         </marking>
         <type id="ID1412850721">
@@ -2052,58 +2090,6 @@ pelo servidor ADAS</text>
                     bold="false"/>
         </port>
       </place>
-      <place id="ID1412871613">
-        <posattr x="-771.000000"
-                 y="126.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>V esta em cobertura?</text>
-        <ellipse w="170.000000"
-                 h="52.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1413043798">
-          <posattr x="-693.000000"
-                   y="97.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">UNIT</text>
-        </type>
-        <initmark id="ID1413044324">
-          <posattr x="-700.000000"
-                   y="154.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">10`()</text>
-        </initmark>
-      </place>
       <place id="ID1412907452">
         <posattr x="-200.000000"
                  y="-84.000000"/>
@@ -2349,38 +2335,6 @@ pelo servidor ADAS</text>
                 version="4.0.1">v_msg</text>
         </annot>
       </arc>
-      <arc id="ID1412879565"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1412873993"/>
-        <placeend idref="ID1412871613"/>
-        <annot id="ID1413448363">
-          <posattr x="-753.000000"
-                   y="213.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">1`()</text>
-        </annot>
-      </arc>
       <arc id="ID1412883697"
            orientation="TtoP"
            order="1">
@@ -2488,38 +2442,6 @@ pelo servidor ADAS</text>
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">v_msg</text>
-        </annot>
-      </arc>
-      <arc id="ID1412919486"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1412913004"/>
-        <placeend idref="ID1412871613"/>
-        <annot id="ID1413448364">
-          <posattr x="-753.000000"
-                   y="18.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">1`()</text>
         </annot>
       </arc>
       <arc id="ID1412920824"
@@ -3880,59 +3802,6 @@ Multi-Party Computation</text>
                 version="4.0.1"/>
         </initmark>
       </place>
-      <place id="ID1413428876">
-        <posattr x="-84.000000"
-                 y="-271.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>Todos os veiculos
-foram validados</text>
-        <ellipse w="126.000000"
-                 h="50.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1413428877">
-          <posattr x="-18.500000"
-                   y="-298.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">BOOL</text>
-        </type>
-        <initmark id="ID1413428878">
-          <posattr x="-4.000000"
-                   y="-243.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </initmark>
-      </place>
       <trans id="ID1413045994"
              explicit="false">
         <posattr x="-523.000000"
@@ -4241,7 +4110,7 @@ action
       <trans id="ID1413147652"
              explicit="false">
         <posattr x="94.000000"
-                 y="-613.000000"/>
+                 y="-607.837500"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4256,8 +4125,8 @@ action
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413449779">
-          <posattr x="16.000000"
-                   y="-582.000000"/>
+          <posattr x="-139.500000"
+                   y="-552.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4267,11 +4136,11 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">[length v_data_list = 0]</text>
         </cond>
         <time id="ID1413147654">
           <posattr x="177.500000"
-                   y="-582.000000"/>
+                   y="-576.837500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4285,7 +4154,7 @@ action
         </time>
         <code id="ID1413147655">
           <posattr x="243.000000"
-                   y="-620.000000"/>
+                   y="-614.837500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4295,14 +4164,14 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">input (fpors, valid);
+                version="4.0.1">input (fpors);
 output (ic);
 action
 (calculateIC(fpors));</text>
         </code>
         <priority id="ID1413147657">
           <posattr x="-13.000000"
-                   y="-644.000000"/>
+                   y="-638.837500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4377,81 +4246,6 @@ action
         <priority id="ID1413192883">
           <posattr x="-38.000000"
                    y="-115.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </priority>
-      </trans>
-      <trans id="ID1413425048"
-             explicit="false">
-        <posattr x="-126.000000"
-                 y="-67.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>Avisar que lista 
-esta vazia</text>
-        <box w="114.000000"
-             h="40.000000"/>
-        <binding x="7.200000"
-                 y="-3.000000"/>
-        <cond id="ID1413425049">
-          <posattr x="-261.500000"
-                   y="-36.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[length v_data_list = 0]</text>
-        </cond>
-        <time id="ID1413425050">
-          <posattr x="-54.500000"
-                   y="-36.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </time>
-        <code id="ID1413425051">
-          <posattr x="-34.500000"
-                   y="-119.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </code>
-        <priority id="ID1413425053">
-          <posattr x="-221.000000"
-                   y="-98.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4546,7 +4340,7 @@ esta vazia</text>
         <transend idref="ID1413045994"/>
         <placeend idref="ID1413076155"/>
         <annot id="ID1413078918">
-          <posattr x="-476.000000"
+          <posattr x="-463.500000"
                    y="153.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4557,7 +4351,7 @@ esta vazia</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">mpcVehicles()</text>
+                version="4.0.1">mpcVehicles(mpc)</text>
         </annot>
       </arc>
       <arc id="ID1413083708"
@@ -4887,7 +4681,7 @@ esta vazia</text>
         <placeend idref="ID1413197651"/>
         <annot id="ID1413205443">
           <posattr x="102.500000"
-                   y="-480.000000"/>
+                   y="-477.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5202,7 +4996,7 @@ esta vazia</text>
         </bendpoint>
         <annot id="ID1413377329">
           <posattr x="81.000000"
-                   y="-737.000000"/>
+                   y="-734.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5215,97 +5009,7 @@ esta vazia</text>
                 version="4.0.1">fpors</text>
         </annot>
       </arc>
-      <arc id="ID1413432767"
-           orientation="TtoP"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413425048"/>
-        <placeend idref="ID1413428876"/>
-        <bendpoint id="ID1413448228"
-                   serial="1">
-          <posattr x="-107.000000"
-                   y="-139.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1413432768">
-          <posattr x="-90.000000"
-                   y="-163.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">true</text>
-        </annot>
-      </arc>
-      <arc id="ID1413449840"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413425048"/>
-        <placeend idref="ID1413076155"/>
-        <bendpoint id="ID1413449842"
-                   serial="1">
-          <posattr x="-126.000000"
-                   y="72.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1413449841">
-          <posattr x="-87.000000"
-                   y="13.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">v_data_list</text>
-        </annot>
-      </arc>
-      <arc id="ID1413449906"
+      <arc id="ID1413504461"
            orientation="PtoT"
            order="1">
         <posattr x="0.000000"
@@ -5321,11 +5025,11 @@ esta vazia</text>
         <arrowattr headsize="1.200000"
                    currentcyckle="2"/>
         <transend idref="ID1413147652"/>
-        <placeend idref="ID1413428876"/>
-        <bendpoint id="ID1413449965"
+        <placeend idref="ID1413076155"/>
+        <bendpoint id="ID1413504464"
                    serial="1">
-          <posattr x="-68.000000"
-                   y="-521.000000"/>
+          <posattr x="-58.762500"
+                   y="-607.837500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5335,9 +5039,22 @@ esta vazia</text>
           <textattr colour="Black"
                     bold="false"/>
         </bendpoint>
-        <annot id="ID1413449907">
-          <posattr x="4.500000"
-                   y="-542.000000"/>
+        <bendpoint id="ID1413504463"
+                   serial="2">
+          <posattr x="-58.762500"
+                   y="72.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <annot id="ID1413504462">
+          <posattr x="-98.000000"
+                   y="-21.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5347,7 +5064,7 @@ esta vazia</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">valid</text>
+                version="4.0.1">v_data_list</text>
         </annot>
       </arc>
       <constraints/>
@@ -5839,7 +5556,8 @@ em cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>RAN recebe mensagem</text>
+        <text>Mensagem recebida 
+por RAN</text>
         <ellipse w="172.000000"
                  h="54.000000"/>
         <token x="-10.000000"
@@ -6444,305 +6162,6 @@ action
       </arc>
       <constraints/>
     </page>
-    <page id="ID1413022434">
-      <pageattr name="Autenticacao em cobertura"/>
-      <place id="ID1413022442">
-        <posattr x="407.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>Mensagem autenticada 
-em cobertura</text>
-        <ellipse w="172.000000"
-                 h="66.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1413022443">
-          <posattr x="491.500000"
-                   y="260.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">V_MSG</text>
-        </type>
-        <initmark id="ID1413022444">
-          <posattr x="502.000000"
-                   y="327.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </initmark>
-        <port id="ID1413022480"
-              type="Out">
-          <posattr x="343.000000"
-                   y="267.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </port>
-      </place>
-      <place id="ID1413022447">
-        <posattr x="-198.000000"
-                 y="252.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>V em cobertura</text>
-        <ellipse w="118.000000"
-                 h="60.000000"/>
-        <token x="-10.000000"
-               y="0.000000"/>
-        <marking x="0.000000"
-                 y="0.000000"
-                 hidden="false">
-          <snap snap_id="0"
-                anchor.horizontal="0"
-                anchor.vertical="0"/>
-        </marking>
-        <type id="ID1413022448">
-          <posattr x="-131.500000"
-                   y="220.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">V_MSG</text>
-        </type>
-        <initmark id="ID1413022449">
-          <posattr x="-121.000000"
-                   y="283.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </initmark>
-        <port id="ID1413022483"
-              type="In">
-          <posattr x="-242.000000"
-                   y="227.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </port>
-      </place>
-      <trans id="ID1413022436"
-             explicit="false">
-        <posattr x="98.000000"
-                 y="308.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <text>Autenticacao em cobertura</text>
-        <box w="214.000000"
-             h="184.000000"/>
-        <binding x="7.200000"
-                 y="-3.000000"/>
-        <cond id="ID1413022437">
-          <posattr x="-18.000000"
-                   y="411.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </cond>
-        <time id="ID1413022438">
-          <posattr x="219.500000"
-                   y="411.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </time>
-        <code id="ID1413022439">
-          <posattr x="239.500000"
-                   y="184.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </code>
-        <priority id="ID1413022441">
-          <posattr x="-47.000000"
-                   y="205.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1"/>
-        </priority>
-      </trans>
-      <arc id="ID1413022445"
-           orientation="TtoP"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413022436"/>
-        <placeend idref="ID1413022442"/>
-        <bendpoint id="ID1413022422"
-                   serial="1">
-          <posattr x="210.000000"
-                   y="294.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1413022446">
-          <posattr x="207.000000"
-                   y="305.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">v_msg</text>
-        </annot>
-      </arc>
-      <arc id="ID1413022450"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413022436"/>
-        <placeend idref="ID1413022447"/>
-        <bendpoint id="ID1413022423"
-                   serial="1">
-          <posattr x="-126.000000"
-                   y="326.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1413022451">
-          <posattr x="-68.000000"
-                   y="337.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">v_msg</text>
-        </annot>
-      </arc>
-      <constraints/>
-    </page>
     <instances>
       <instance id="ID2149"
                 page="ID6">
@@ -6757,8 +6176,6 @@ em cobertura</text>
         <instance id="ID1413027310"
                   trans="ID1413027259"/>
       </instance>
-      <instance id="ID1413022465"
-                page="ID1413022434"/>
     </instances>
     <options>
       <option name="realtimestamp">
@@ -6781,17 +6198,12 @@ em cobertura</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6801,9 +6213,44 @@ em cobertura</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10011.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10011.options.disable">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.options.discover">
+        <value>
+          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -7004,60 +6451,60 @@ em cobertura</text>
     </options>
     <binders>
       <cpnbinder id="ID1412850247"
-                 x="546"
-                 y="51"
-                 width="1592"
-                 height="952">
+                 x="385"
+                 y="25"
+                 width="2129"
+                 height="1313">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="64.000000"
-                    pany="98.000000"
-                    zoom="1.000000"
+                    panx="-780.984375"
+                    pany="71.656250"
+                    zoom="1.562500"
                     instance="ID2149">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413286571"
-                    panx="340.000000"
-                    pany="117.000000"
-                    zoom="1.000000"
+                    panx="623.875000"
+                    pany="243.062500"
+                    zoom="1.562500"
                     instance="ID1412869665">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413290213"
-                    panx="-153.000000"
-                    pany="-66.000000"
-                    zoom="1.000000"
+                    panx="-197.937500"
+                    pany="-117.437500"
+                    zoom="1.562500"
                     instance="ID1412977278">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="-14.437500"
-                    pany="-540.437500"
-                    zoom="1.000000"
+                    panx="-94.183594"
+                    pany="-210.746094"
+                    zoom="1.562500"
                     instance="ID1412994338">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413296404"
-                    panx="-113.000000"
-                    pany="109.000000"
-                    zoom="1.000000"
+                    panx="-211.312500"
+                    pany="189.500000"
+                    zoom="1.562500"
                     instance="ID1413027310">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413321755"
-                    panx="-684.000000"
-                    pany="441.000000"
-                    zoom="1.000000"
+                    panx="-858.000000"
+                    pany="1003.062500"
+                    zoom="1.562500"
                     instance="ID1413023036">
             <zorder>
               <position value="0"/>
@@ -7065,12 +6512,12 @@ em cobertura</text>
           </cpnsheet>
         </sheets>
         <zorder>
-          <position value="2"/>
-          <position value="4"/>
-          <position value="5"/>
-          <position value="1"/>
           <position value="0"/>
+          <position value="1"/>
+          <position value="2"/>
           <position value="3"/>
+          <position value="5"/>
+          <position value="4"/>
         </zorder>
       </cpnbinder>
     </binders>
@@ -7138,13 +6585,23 @@ em cobertura</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false">
         <IndexNode expanded="false"/>
       </IndexNode>
       <IndexNode expanded="true">
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
@@ -7180,20 +6637,15 @@ em cobertura</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
@@ -7204,21 +6656,28 @@ em cobertura</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
-      <IndexNode expanded="false">
+      <IndexNode expanded="true">
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
       </IndexNode>
-      <IndexNode expanded="true"/>
     </IndexNode>
   </cpnet>
 </workspaceElements>
