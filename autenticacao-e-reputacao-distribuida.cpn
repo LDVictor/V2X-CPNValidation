@@ -308,6 +308,13 @@
           <id>msg</id>
           <layout>var msg: MSG;</layout>
         </var>
+        <ml id="ID1413545273">fun roundN (x, n) =
+    let val m = Math.pow(10.0, real n)
+    in real (round (x * m)) / m end;
+          <layout>fun roundN (x, n) =
+    let val m = Math.pow(10.0, real n)
+    in real (round (x * m)) / m end;</layout>
+        </ml>
         <ml id="ID1412980566">fun validVC(vc: VC) = if (vc &lt;&gt; &quot;&quot;) then true else false;
           <layout>fun validVC(vc: VC) = if (vc &lt;&gt; &quot;&quot;) then true else false;</layout>
         </ml>
@@ -317,8 +324,8 @@
         <ml id="ID1412984789">fun returnRepScore(v_msg: V_MSG) = #3 v_msg;
           <layout>fun returnRepScore(v_msg: V_MSG) = #3 v_msg;</layout>
         </ml>
-        <ml id="ID1413065489">fun calculateFpor(v_data: V_DATA) = ( ( (#4 v_data / T_CURRENT) + (( (#1 (#5 v_data)) + (#2 (#5 v_data))) / (LAT_RAN + LON_RAN) )  ) / 2.0 );
-          <layout>fun calculateFpor(v_data: V_DATA) = ( ( (#4 v_data / T_CURRENT) + (( (#1 (#5 v_data)) + (#2 (#5 v_data))) / (LAT_RAN + LON_RAN) )  ) / 2.0 );</layout>
+        <ml id="ID1413065489">fun calculateFpor(v_data: V_DATA) = roundN(( ( (#4 v_data / T_CURRENT) + (( (#1 (#5 v_data)) + (#2 (#5 v_data))) / (LAT_RAN + LON_RAN) )  ) / 2.0 ), 1);
+          <layout>fun calculateFpor(v_data: V_DATA) = roundN(( ( (#4 v_data / T_CURRENT) + (( (#1 (#5 v_data)) + (#2 (#5 v_data))) / (LAT_RAN + LON_RAN) )  ) / 2.0 ), 1);</layout>
         </ml>
         <ml id="ID1413066619">fun returnScore(v_data: V_DATA) = #2 v_data;
           <layout>fun returnScore(v_data: V_DATA) = #2 v_data;</layout>
@@ -332,8 +339,8 @@
         <ml id="ID1413380594">fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);
           <layout>fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);</layout>
         </ml>
-        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = (sumFpors(fpors)) / real (List.length fpors);
-          <layout>fun calculateIC(fpors: FPORS) = (sumFpors(fpors)) / real (List.length fpors);</layout>
+        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = roundN((sumFpors(fpors)) / real (List.length fpors), 1);
+          <layout>fun calculateIC(fpors: FPORS) = roundN((sumFpors(fpors)) / real (List.length fpors), 1);</layout>
         </ml>
         <ml id="ID1413295515">fun mpcVehicles(mpc: INT) = 
 if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
@@ -381,7 +388,7 @@ else
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V recebe mensagem de V&apos;</text>
+        <text>Mensagem recebida por V&apos;</text>
         <ellipse w="198.000000"
                  h="68.000000"/>
         <token x="-10.000000"
@@ -553,8 +560,9 @@ else
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem verificada - aguardando cobertura</text>
-        <ellipse w="368.000000"
+        <text>Mensagem verificada e 
+aguardando cobertura</text>
+        <ellipse w="182.000000"
                  h="76.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -566,7 +574,7 @@ else
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412934751">
-          <posattr x="-381.500000"
+          <posattr x="-446.500000"
                    y="-246.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -580,7 +588,7 @@ else
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412934752">
-          <posattr x="-371.000000"
+          <posattr x="-436.000000"
                    y="-173.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2036,7 +2044,7 @@ pelo servidor ADAS</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V recebe mensagem de V&apos;</text>
+        <text>Mensagem recebida por V&apos;</text>
         <ellipse w="198.000000"
                  h="68.000000"/>
         <token x="-10.000000"
@@ -2101,8 +2109,9 @@ pelo servidor ADAS</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem verificada - aguardando cobertura</text>
-        <ellipse w="324.000000"
+        <text>Mensagem verificada e 
+aguardando cobertura</text>
+        <ellipse w="178.000000"
                  h="86.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -2114,7 +2123,7 @@ pelo servidor ADAS</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412907453">
-          <posattr x="-60.500000"
+          <posattr x="-112.500000"
                    y="-124.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2128,7 +2137,7 @@ pelo servidor ADAS</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412907454">
-          <posattr x="-50.000000"
+          <posattr x="-102.000000"
                    y="-43.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2143,7 +2152,7 @@ pelo servidor ADAS</text>
         </initmark>
         <port id="ID1412933313"
               type="In">
-          <posattr x="-317.000000"
+          <posattr x="-265.000000"
                    y="-117.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2430,7 +2439,7 @@ pelo servidor ADAS</text>
         <transend idref="ID1412913004"/>
         <placeend idref="ID1412907452"/>
         <annot id="ID1412918161">
-          <posattr x="-514.000000"
+          <posattr x="-478.000000"
                    y="-73.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3383,8 +3392,9 @@ fora de cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem verificada - aguardando cobertura</text>
-        <ellipse w="368.000000"
+        <text>Mensagem verificada e 
+aguardando cobertura</text>
+        <ellipse w="180.000000"
                  h="76.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -3396,7 +3406,7 @@ fora de cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412994319">
-          <posattr x="825.500000"
+          <posattr x="759.500000"
                    y="173.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3410,7 +3420,7 @@ fora de cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412994320">
-          <posattr x="836.000000"
+          <posattr x="770.000000"
                    y="246.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3425,7 +3435,7 @@ fora de cobertura</text>
         </initmark>
         <port id="ID1412994364"
               type="Out">
-          <posattr x="539.000000"
+          <posattr x="605.000000"
                    y="180.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3605,7 +3615,7 @@ Multi-Party Computation</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V rejeita Vx</text>
+        <text>Vx rejeitado</text>
         <ellipse w="206.000000"
                  h="64.000000"/>
         <token x="-10.000000"
@@ -3709,7 +3719,7 @@ Multi-Party Computation</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V recebe Fpor calculada por Vx</text>
+        <text>Fpor calculado por Vx recebido</text>
         <ellipse w="228.000000"
                  h="56.000000"/>
         <token x="-10.000000"
@@ -6198,7 +6208,7 @@ action
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10007.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6213,12 +6223,17 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10011.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10005.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6233,22 +6248,17 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10011.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10011.options.disable">
+      <option name="extensions.10007.options.discover">
         <value>
           <boolean>false</boolean>
         </value>
       </option>
-      <option name="extensions.10007.options.discover">
+      <option name="extensions.10011.options.disable">
         <value>
           <boolean>false</boolean>
         </value>
@@ -6451,60 +6461,60 @@ action
     </options>
     <binders>
       <cpnbinder id="ID1412850247"
-                 x="385"
-                 y="25"
+                 x="430"
+                 y="32"
                  width="2129"
                  height="1313">
         <sheets>
           <cpnsheet id="ID2215"
-                    panx="-780.984375"
-                    pany="71.656250"
-                    zoom="1.562500"
+                    panx="-262.590000"
+                    pany="67.660000"
+                    zoom="1.000000"
                     instance="ID2149">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413286571"
-                    panx="623.875000"
-                    pany="243.062500"
-                    zoom="1.562500"
+                    panx="430.440000"
+                    pany="23.800000"
+                    zoom="1.000000"
                     instance="ID1412869665">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413290213"
-                    panx="-197.937500"
-                    pany="-117.437500"
-                    zoom="1.562500"
+                    panx="-168.920000"
+                    pany="-72.800000"
+                    zoom="1.000000"
                     instance="ID1412977278">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="-94.183594"
-                    pany="-210.746094"
-                    zoom="1.562500"
+                    panx="-72.477500"
+                    pany="-334.117500"
+                    zoom="1.000000"
                     instance="ID1412994338">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413296404"
-                    panx="-211.312500"
-                    pany="189.500000"
-                    zoom="1.562500"
+                    panx="-116.040000"
+                    pany="86.240000"
+                    zoom="1.000000"
                     instance="ID1413027310">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413321755"
-                    panx="-858.000000"
-                    pany="1003.062500"
-                    zoom="1.562500"
+                    panx="-628.160000"
+                    pany="536.040000"
+                    zoom="1.000000"
                     instance="ID1413023036">
             <zorder>
               <position value="0"/>
@@ -6512,17 +6522,17 @@ action
           </cpnsheet>
         </sheets>
         <zorder>
+          <position value="4"/>
+          <position value="5"/>
           <position value="0"/>
           <position value="1"/>
           <position value="2"/>
           <position value="3"/>
-          <position value="5"/>
-          <position value="4"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -6637,23 +6647,15 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
@@ -6664,8 +6666,17 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
