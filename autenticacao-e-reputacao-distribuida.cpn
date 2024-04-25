@@ -333,14 +333,11 @@
         <ml id="ID1413067778">fun calculateSW(v_data: V_DATA) = if ((#3 v_data) &gt;= (T_VRAN - TIME_STAMP) andalso (#3 v_data) &lt;= (T_VRAN + TIME_STAMP)) then true else false;
           <layout>fun calculateSW(v_data: V_DATA) = if ((#3 v_data) &gt;= (T_VRAN - TIME_STAMP) andalso (#3 v_data) &lt;= (T_VRAN + TIME_STAMP)) then true else false;</layout>
         </ml>
-        <ml id="ID1413392276">fun intSum (a,b) = a + b
-          <layout>fun intSum (a,b) = a + b</layout>
+        <ml id="ID1413380594">fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then roundN(0.0, 1) else roundN(hd fpors, 1) + sumFpors(tl fpors);
+          <layout>fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then roundN(0.0, 1) else roundN(hd fpors, 1) + sumFpors(tl fpors);</layout>
         </ml>
-        <ml id="ID1413380594">fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);
-          <layout>fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);</layout>
-        </ml>
-        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = roundN((sumFpors(fpors)) / real (List.length fpors), 1);
-          <layout>fun calculateIC(fpors: FPORS) = roundN((sumFpors(fpors)) / real (List.length fpors), 1);</layout>
+        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = if (List.length fpors = 0) then roundN(0.0, 1) else roundN((sumFpors(fpors)) / roundN(real (List.length fpors), 1), 1);
+          <layout>fun calculateIC(fpors: FPORS) = if (List.length fpors = 0) then roundN(0.0, 1) else roundN((sumFpors(fpors)) / roundN(real (List.length fpors), 1), 1);</layout>
         </ml>
         <ml id="ID1413295515">fun mpcVehicles(mpc: INT) = 
 if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
@@ -348,24 +345,60 @@ if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)),
 (3, 4.8, 0.3, 0.13, (0.78, 0.34)),
 (4, 3.0, 0.8, 0.3, (0.1, 0.2)),
 (5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
-else
+else if mpc = 2 then
 1`[(1, 4.0, 0.45, 0.48, (0.45, 0.53)),
 (2, 3.5, 0.4, 0.3, (0.28, 0.34)),
 (3, 4.7, 0.5, 0.53, (0.48, 0.44)),
 (4, 3.4, 0.8, 0.3, (0.1, 0.2)),
-(5, 4.9, 0.5, 0.48, (0.43, 0.42))];
+(5, 4.9, 0.5, 0.48, (0.43, 0.42))]
+else if mpc = 3 then
+1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 4.5, 0.4, 0.3, (0.28, 0.34)), 
+(3, 2.8, 0.3, 0.13, (0.78, 0.34)),
+(4, 3.0, 0.2, 0.3, (0.12, 0.21)),
+(5, 4.9, 0.5, 0.5, (0.43, 0.42))] 
+else if mpc = 4 then
+1`[(1, 2.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 2.5, 0.4, 0.3, (0.28, 0.34)), 
+(3, 2.8, 0.3, 0.13, (0.78, 0.34)),
+(4, 3.0, 0.8, 0.3, (0.1, 0.2)),
+(5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
+else 
+1`[(1, 1.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 3.5, 0.4, 0.3, (0.48, 0.34)), 
+(3, 4.5, 0.5, 0.5, (0.5, 0.5)),
+(4, 3.8, 0.5, 0.5, (0.41, 0.42)),
+(5, 5.0, 0.8, 0.3, (0.23, 0.22))];
           <layout>fun mpcVehicles(mpc: INT) = 
 if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
 (2, 3.5, 0.4, 0.3, (0.28, 0.34)), 
 (3, 4.8, 0.3, 0.13, (0.78, 0.34)),
 (4, 3.0, 0.8, 0.3, (0.1, 0.2)),
 (5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
-else
+else if mpc = 2 then
 1`[(1, 4.0, 0.45, 0.48, (0.45, 0.53)),
 (2, 3.5, 0.4, 0.3, (0.28, 0.34)),
 (3, 4.7, 0.5, 0.53, (0.48, 0.44)),
 (4, 3.4, 0.8, 0.3, (0.1, 0.2)),
-(5, 4.9, 0.5, 0.48, (0.43, 0.42))];</layout>
+(5, 4.9, 0.5, 0.48, (0.43, 0.42))]
+else if mpc = 3 then
+1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 4.5, 0.4, 0.3, (0.28, 0.34)), 
+(3, 2.8, 0.3, 0.13, (0.78, 0.34)),
+(4, 3.0, 0.2, 0.3, (0.12, 0.21)),
+(5, 4.9, 0.5, 0.5, (0.43, 0.42))] 
+else if mpc = 4 then
+1`[(1, 2.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 2.5, 0.4, 0.3, (0.28, 0.34)), 
+(3, 2.8, 0.3, 0.13, (0.78, 0.34)),
+(4, 3.0, 0.8, 0.3, (0.1, 0.2)),
+(5, 4.9, 0.8, 0.3, (0.23, 0.22))] 
+else 
+1`[(1, 1.0, 0.5, 0.5, (0.5, 0.5)), 
+(2, 3.5, 0.4, 0.3, (0.48, 0.34)), 
+(3, 4.5, 0.5, 0.5, (0.5, 0.5)),
+(4, 3.8, 0.5, 0.5, (0.41, 0.42)),
+(5, 5.0, 0.8, 0.3, (0.23, 0.22))];</layout>
         </ml>
         <ml id="ID1413303960">fun checkVCinVDR(v_msg: V_MSG) = if (mem vdr_content (#2 v_msg)) then true else false;
           <layout>fun checkVCinVDR(v_msg: V_MSG) = if (mem vdr_content (#2 v_msg)) then true else false;</layout>
@@ -6208,27 +6241,7 @@ action
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10011.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6238,29 +6251,19 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10004.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10008.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10007.options.discover">
-        <value>
-          <boolean>false</boolean>
-        </value>
-      </option>
-      <option name="extensions.10011.options.disable">
-        <value>
-          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -6461,10 +6464,10 @@ action
     </options>
     <binders>
       <cpnbinder id="ID1412850247"
-                 x="430"
+                 x="392"
                  y="32"
-                 width="2129"
-                 height="1313">
+                 width="1508"
+                 height="1060">
         <sheets>
           <cpnsheet id="ID2215"
                     panx="-262.590000"
@@ -6494,8 +6497,8 @@ action
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="-72.477500"
-                    pany="-334.117500"
+                    panx="-156.477500"
+                    pany="-243.117500"
                     zoom="1.000000"
                     instance="ID1412994338">
             <zorder>
@@ -6532,7 +6535,7 @@ action
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="false">
+    <IndexNode expanded="true">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -6594,16 +6597,6 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-        </IndexNode>
-        <IndexNode expanded="false">
-          <IndexNode expanded="false"/>
-        </IndexNode>
-        <IndexNode expanded="false">
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
@@ -6631,7 +6624,7 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
@@ -6670,13 +6663,12 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
