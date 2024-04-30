@@ -74,6 +74,39 @@
       </block>
       <block id="ID1412349770">
         <id>Declarations</id>
+        <block id="ID1413553982">
+          <id>MSC</id>
+          <ml id="ID1413557868">fun createMSC() = 
+addVehicle(); 
+addVehicle&apos;();
+            <layout>fun createMSC() = 
+addVehicle(); 
+addVehicle&apos;();</layout>
+          </ml>
+          <ml id="ID1413551824">val msc = MSC.createMSC(&quot;ARD_MSC&quot;);
+            <layout>val msc = MSC.createMSC(&quot;ARD_MSC&quot;);</layout>
+          </ml>
+          <ml id="ID1413553646">fun addVehicle() = MSC.addProcess(msc, &quot;Vehicle V&quot;);
+            <layout>fun addVehicle() = MSC.addProcess(msc, &quot;Vehicle V&quot;);</layout>
+          </ml>
+          <ml id="ID1413555005">fun addVehicle&apos;() = MSC.addProcess(msc, &quot;Vehicle V&apos;&quot;);
+            <layout>fun addVehicle&apos;() = MSC.addProcess(msc, &quot;Vehicle V&apos;&quot;);</layout>
+          </ml>
+          <ml id="ID1413555756">fun addRAN() = MSC.addProcess(msc, &quot;RAN&quot;);
+            <layout>fun addRAN() = MSC.addProcess(msc, &quot;RAN&quot;);</layout>
+          </ml>
+          <ml id="ID1413556083">fun addReject() = MSC.addProcess(msc, &quot;Reject&quot;);
+            <layout>fun addReject() = MSC.addProcess(msc, &quot;Reject&quot;);</layout>
+          </ml>
+          <ml id="ID1413556759">fun addADAS() = MSC.addProcess(msc, &quot;ADAS&quot;);
+            <layout>fun addADAS() = MSC.addProcess(msc, &quot;ADAS&quot;);</layout>
+          </ml>
+          <ml id="ID1413557300">fun eventCreationMessage() = MSC.addInternalEvent
+(msc, &quot;Vehicle V&quot;, &quot;create_message&quot;);
+            <layout>fun eventCreationMessage() = MSC.addInternalEvent
+(msc, &quot;Vehicle V&quot;, &quot;create_message&quot;);</layout>
+          </ml>
+        </block>
         <color id="ID1413303044">
           <id>VDR</id>
           <list>
@@ -6246,12 +6279,12 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10006.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6261,7 +6294,7 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6463,11 +6496,19 @@ action
       </option>
     </options>
     <binders>
+      <emptybinder id="ID1413552485"
+                   x="1169"
+                   y="187"
+                   width="600"
+                   height="480">
+        <sheets/>
+        <zorder/>
+      </emptybinder>
       <cpnbinder id="ID1412850247"
-                 x="392"
-                 y="32"
-                 width="1508"
-                 height="1060">
+                 x="451"
+                 y="29"
+                 width="1449"
+                 height="938">
         <sheets>
           <cpnsheet id="ID2215"
                     panx="-262.590000"
@@ -6497,8 +6538,8 @@ action
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="-156.477500"
-                    pany="-243.117500"
+                    panx="119.522500"
+                    pany="-64.117500"
                     zoom="1.000000"
                     instance="ID1412994338">
             <zorder>
@@ -6624,40 +6665,50 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="false">
-          <IndexNode expanded="true"/>
+        <IndexNode expanded="true">
+          <IndexNode expanded="true">
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+            <IndexNode expanded="true"/>
+          </IndexNode>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
@@ -6666,21 +6717,23 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
-      <IndexNode expanded="true">
+      <IndexNode expanded="false">
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
       </IndexNode>
+      <IndexNode expanded="true"/>
+      <IndexNode expanded="true"/>
     </IndexNode>
   </cpnet>
 </workspaceElements>
