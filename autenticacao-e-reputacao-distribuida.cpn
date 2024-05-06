@@ -556,10 +556,10 @@ String.concat [msg, &quot;(id:&quot;, Int.toString id, &quot;\&quot;)&quot;]</la
 (*MSC.addEvent(msc, mpc_vehicles, vehicle_v, notify_msg(&quot;Returning FPORs for &quot;, #1 v_msg)*)
 )</layout>
         </ml>
-        <ml id="ID1506572920">fun calculate_ic(v_msg: V_MSG) = (
+        <ml id="ID1506572920">fun return_ic(v_msg: V_MSG) = (
     MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
 )
-          <layout>fun calculate_ic(v_msg: V_MSG) = (
+          <layout>fun return_ic(v_msg: V_MSG) = (
     MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
 )</layout>
         </ml>
@@ -2918,8 +2918,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1412873996">
-          <posattr x="-606.500000"
-                   y="242.000000"/>
+          <posattr x="-811.000000"
+                   y="241.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2929,7 +2929,10 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (id, v_msg);
+output ();
+action
+(send_msg(id, v_msg));</text>
         </code>
         <priority id="ID1412873998">
           <posattr x="-939.000000"
@@ -3022,7 +3025,7 @@ mensagem</text>
       </trans>
       <arc id="ID1412878669"
            orientation="PtoT"
-           order="2">
+           order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
         <fillattr colour="White"
@@ -3115,8 +3118,8 @@ mensagem</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1412890117">
-          <posattr x="-499.000000"
-                   y="220.000000"/>
+          <posattr x="-467.000000"
+                   y="161.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3737,8 +3740,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1412982385">
-          <posattr x="263.000000"
-                   y="-230.000000"/>
+          <posattr x="285.000000"
+                   y="-216.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3749,9 +3752,7 @@ action
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">input (v_msg);
-output (rep_score);
-action
-(returnRepScore(v_msg));</text>
+action authenticate_ooc(v_msg);</text>
         </code>
         <priority id="ID1412982387">
           <posattr x="37.000000"
@@ -3951,7 +3952,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if rep_score &lt; 3.5 then 1`v_msg else empty</text>
+                version="4.0.1">if #3 v_msg &lt; 3.5 then 1`v_msg else empty</text>
         </annot>
       </arc>
       <arc id="ID1412986095"
@@ -3996,7 +3997,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if rep_score &gt; 3.5 then 1`v_msg else empty</text>
+                version="4.0.1">if #3 v_msg &gt; 3.5 then 1`v_msg else empty</text>
         </annot>
       </arc>
       <constraints/>
@@ -4611,8 +4612,8 @@ Multi-Party Computation</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413045997">
-          <posattr x="-381.500000"
-                   y="172.000000"/>
+          <posattr x="-645.000000"
+                   y="195.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4622,7 +4623,9 @@ Multi-Party Computation</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input(v_msg);
+action
+(calculateFpors(v_msg));</text>
         </code>
         <priority id="ID1413045999">
           <posattr x="-668.000000"
@@ -4993,8 +4996,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1413223669">
-          <posattr x="222.500000"
-                   y="-136.000000"/>
+          <posattr x="22.000000"
+                   y="-132.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5004,7 +5007,9 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (v_msg);
+action
+(return_ic(v_msg));</text>
         </code>
         <priority id="ID1413192883">
           <posattr x="-38.000000"
@@ -6459,8 +6464,8 @@ por RAN</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413298710">
-          <posattr x="-51.500000"
-                   y="310.000000"/>
+          <posattr x="-63.500000"
+                   y="312.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6470,7 +6475,9 @@ por RAN</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (v_msg);
+action
+(authenticate_ic(v_msg));</text>
         </code>
         <priority id="ID1413298712">
           <posattr x="-420.000000"
@@ -6961,6 +6968,26 @@ action
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
+      <option name="extensions.10011.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
@@ -6971,12 +6998,7 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10004.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6991,27 +7013,12 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10011.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10008.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10007.options.discover">
+      <option name="extensions.10011.options.disable">
         <value>
           <boolean>false</boolean>
         </value>
       </option>
-      <option name="extensions.10011.options.disable">
+      <option name="extensions.10007.options.discover">
         <value>
           <boolean>false</boolean>
         </value>
@@ -7213,17 +7220,77 @@ action
       </option>
     </options>
     <binders>
-      <emptybinder id="ID1506552148"
-                   x="1620"
-                   y="121"
-                   width="651"
-                   height="611">
+      <emptybinder id="ID1506582516"
+                   x="1911"
+                   y="50"
+                   width="628"
+                   height="1244">
         <sheets/>
         <zorder/>
       </emptybinder>
+      <cpnbinder id="ID1506584450"
+                 x="436"
+                 y="48"
+                 width="1454"
+                 height="1273">
+        <sheets>
+          <cpnsheet id="ID1506584420"
+                    panx="-358.000000"
+                    pany="37.000000"
+                    zoom="1.000000"
+                    instance="ID2149">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506584645"
+                    panx="448.000000"
+                    pany="152.000000"
+                    zoom="1.000000"
+                    instance="ID1412869665">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506585302"
+                    panx="-130.000000"
+                    pany="-73.000000"
+                    zoom="1.000000"
+                    instance="ID1412977278">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506588246"
+                    panx="-59.000000"
+                    pany="-210.000000"
+                    zoom="1.000000"
+                    instance="ID1412994338">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506590425"
+                    panx="-29.000000"
+                    pany="102.000000"
+                    zoom="1.000000"
+                    instance="ID1413027310">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+        </sheets>
+        <zorder>
+          <position value="1"/>
+          <position value="2"/>
+          <position value="3"/>
+          <position value="0"/>
+          <position value="4"/>
+        </zorder>
+      </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -7365,7 +7432,7 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
@@ -7394,15 +7461,15 @@ action
         </IndexNode>
         <IndexNode expanded="true">
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
