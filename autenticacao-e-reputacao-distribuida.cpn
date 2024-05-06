@@ -464,6 +464,135 @@ else if (msg = &quot;Highway Z: Autobahn&quot;) then 3
 else 4;</layout>
         </ml>
       </block>
+      <block id="ID1506541137">
+        <id>MSC Constants</id>
+        <ml id="ID1506551891">val msc = MSC.createMSC(&quot;V2X-CPNValidation&quot;);
+          <layout>val msc = MSC.createMSC(&quot;V2X-CPNValidation&quot;);</layout>
+        </ml>
+        <ml id="ID1506541632">val adas_server = &quot;ADAS Server&quot;;
+          <layout>val adas_server = &quot;ADAS Server&quot;;</layout>
+        </ml>
+        <ml id="ID1506541540">val ran = &quot;RAN&quot;;
+          <layout>val ran = &quot;RAN&quot;;</layout>
+        </ml>
+        <ml id="ID1506541460">val mpc_vehicles = &quot;MPC Vehicles&quot;;
+          <layout>val mpc_vehicles = &quot;MPC Vehicles&quot;;</layout>
+        </ml>
+        <ml id="ID1506541392">val vehicle_v&apos; = &quot;Vehicle V&apos;&quot;;
+          <layout>val vehicle_v&apos; = &quot;Vehicle V&apos;&quot;;</layout>
+        </ml>
+        <ml id="ID1506541336">val vehicle_v = &quot;Vehicle V&quot;;
+          <layout>val vehicle_v = &quot;Vehicle V&quot;;</layout>
+        </ml>
+        <ml id="ID1506555606">val vdr = &quot;VDR&quot;;
+          <layout>val vdr = &quot;VDR&quot;;</layout>
+        </ml>
+        <ml id="ID1506552895">val _ = MSC.addProcess(msc, vehicle_v&apos;);
+          <layout>val _ = MSC.addProcess(msc, vehicle_v&apos;);</layout>
+        </ml>
+        <ml id="ID1506553673">val _ = MSC.addProcess(msc, vehicle_v);
+          <layout>val _ = MSC.addProcess(msc, vehicle_v);</layout>
+        </ml>
+        <ml id="ID1506554213">val _ = MSC.addProcess(msc, mpc_vehicles);
+          <layout>val _ = MSC.addProcess(msc, mpc_vehicles);</layout>
+        </ml>
+        <ml id="ID1506554765">val _ = MSC.addProcess(msc, ran);
+          <layout>val _ = MSC.addProcess(msc, ran);</layout>
+        </ml>
+        <ml id="ID1506556470">val _ = MSC.addProcess(msc, vdr);
+          <layout>val _ = MSC.addProcess(msc, vdr);</layout>
+        </ml>
+        <ml id="ID1506557070">val _ = MSC.addProcess(msc, adas_server);
+          <layout>val _ = MSC.addProcess(msc, adas_server);</layout>
+        </ml>
+      </block>
+      <block id="ID1506549233">
+        <id>MSC Functions</id>
+        <ml id="ID1506581121">fun notify_msg_text(msg, msg_content) = 
+String.concat [msg, String.toString msg_content, &quot;\&quot;)&quot;]
+          <layout>fun notify_msg_text(msg, msg_content) = 
+String.concat [msg, String.toString msg_content, &quot;\&quot;)&quot;]</layout>
+        </ml>
+        <ml id="ID1506557985">fun notify_msg(msg, id) =
+String.concat [msg, &quot;(id:&quot;, Int.toString id, &quot;\&quot;)&quot;]
+          <layout>fun notify_msg(msg, id) =
+String.concat [msg, &quot;(id:&quot;, Int.toString id, &quot;\&quot;)&quot;]</layout>
+        </ml>
+        <ml id="ID1506560220">fun send_msg(id, v_msg) = (
+    MSC.addInternalEvent(msc, vehicle_v&apos;, &quot;Create message.&quot;)
+    (*MSC.addEvent(msc, vehicle_v&apos;, vehicle_v, notify_msg(&quot;Send message to V, ID = &quot;, id)*)
+)
+          <layout>fun send_msg(id, v_msg) = (
+    MSC.addInternalEvent(msc, vehicle_v&apos;, &quot;Create message.&quot;)
+    (*MSC.addEvent(msc, vehicle_v&apos;, vehicle_v, notify_msg(&quot;Send message to V, ID = &quot;, id)*)
+)</layout>
+        </ml>
+        <ml id="ID1506561219">fun authenticate_ooc(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Authenticate out of coverage&quot;, #1 v_msg));
+    if validVC(#2 v_msg) then
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Authenticated out of coverage&quot;)
+    else 
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Not authenticated out of coverage&quot;)
+)
+          <layout>fun authenticate_ooc(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Authenticate out of coverage&quot;, #1 v_msg));
+    if validVC(#2 v_msg) then
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Authenticated out of coverage&quot;)
+    else 
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Not authenticated out of coverage&quot;)
+)</layout>
+        </ml>
+        <ml id="ID1506568001">fun calculateFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, vehicle_v, mpc_vehicles, notify_msg(&quot;Calculate FPORs for &quot;, #1 v_msg)*)
+)
+          <layout>fun calculateFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, vehicle_v, mpc_vehicles, notify_msg(&quot;Calculate FPORs for &quot;, #1 v_msg)*)
+)</layout>
+        </ml>
+        <ml id="ID1506570409">fun returnFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, mpc_vehicles, vehicle_v, notify_msg(&quot;Returning FPORs for &quot;, #1 v_msg)*)
+)
+          <layout>fun returnFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, mpc_vehicles, vehicle_v, notify_msg(&quot;Returning FPORs for &quot;, #1 v_msg)*)
+)</layout>
+        </ml>
+        <ml id="ID1506572920">fun calculate_ic(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
+)
+          <layout>fun calculate_ic(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
+)</layout>
+        </ml>
+        <ml id="ID1506575100">fun authenticate_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, vehicle_v, ran, notify_msg(&quot;Authenticate in coverage&quot;, #1 v_msg))
+)
+          <layout>fun authenticate_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, vehicle_v, ran, notify_msg(&quot;Authenticate in coverage&quot;, #1 v_msg))
+)</layout>
+        </ml>
+        <ml id="ID1506576449">fun check_vc_in_vdr(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, vdr, notify_msg(&quot;Check VC in VDR&quot;, #1 v_msg));
+    if checkVCinVDR(v_msg) then
+       MSC.addEvent(msc, vdr, ran, &quot;Authenticated in coverage&quot;)
+    else 
+       MSC.addEvent(msc, vdr, ran, &quot;Not authenticated in coverage&quot;)
+)
+          <layout>fun check_vc_in_vdr(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, vdr, notify_msg(&quot;Check VC in VDR&quot;, #1 v_msg));
+    if checkVCinVDR(v_msg) then
+       MSC.addEvent(msc, vdr, ran, &quot;Authenticated in coverage&quot;)
+    else 
+       MSC.addEvent(msc, vdr, ran, &quot;Not authenticated in coverage&quot;)
+)</layout>
+        </ml>
+        <ml id="ID1506578747">fun send_msg_to_server(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, adas_server, notify_msg_text(&quot;Send message to ADAS: &quot;, #4 v_msg))
+)
+          <layout>fun send_msg_to_server(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, adas_server, notify_msg_text(&quot;Send message to ADAS: &quot;, #4 v_msg))
+)</layout>
+        </ml>
+      </block>
     </globbox>
     <page id="ID6">
       <pageattr name="Modelo de Autenticacao e Reputacao Distribuida"/>
@@ -6837,7 +6966,22 @@ action
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10006.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6852,22 +6996,7 @@ action
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10006.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7084,76 +7213,14 @@ action
       </option>
     </options>
     <binders>
-      <cpnbinder id="ID1412850247"
-                 x="710"
-                 y="26"
-                 width="1828"
-                 height="1313">
-        <sheets>
-          <cpnsheet id="ID1413286571"
-                    panx="430.440000"
-                    pany="182.800000"
-                    zoom="1.000000"
-                    instance="ID1412869665">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413290213"
-                    panx="-19.920000"
-                    pany="-97.800000"
-                    zoom="1.000000"
-                    instance="ID1412977278">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413292660"
-                    panx="113.522500"
-                    pany="-274.117500"
-                    zoom="1.000000"
-                    instance="ID1412994338">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413296404"
-                    panx="-286.040000"
-                    pany="56.240000"
-                    zoom="1.000000"
-                    instance="ID1413027310">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413321755"
-                    panx="-545.160000"
-                    pany="577.040000"
-                    zoom="1.000000"
-                    instance="ID1413023036">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID2215"
-                    panx="-8.590000"
-                    pany="82.660000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-        </sheets>
-        <zorder>
-          <position value="4"/>
-          <position value="2"/>
-          <position value="3"/>
-          <position value="1"/>
-          <position value="0"/>
-          <position value="5"/>
-        </zorder>
-      </cpnbinder>
+      <emptybinder id="ID1506552148"
+                   x="1620"
+                   y="121"
+                   width="651"
+                   height="611">
+        <sheets/>
+        <zorder/>
+      </emptybinder>
     </binders>
     <monitorblock name="Monitors"/>
     <IndexNode expanded="true">
@@ -7231,7 +7298,9 @@ action
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false"/>
+      <IndexNode expanded="false">
+        <IndexNode expanded="false"/>
+      </IndexNode>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
@@ -7253,7 +7322,7 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
@@ -7308,15 +7377,43 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+        <IndexNode expanded="true">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
-      <IndexNode expanded="false">
+      <IndexNode expanded="true">
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
       </IndexNode>
+      <IndexNode expanded="true"/>
     </IndexNode>
   </cpnet>
 </workspaceElements>
