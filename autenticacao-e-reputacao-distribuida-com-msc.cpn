@@ -379,8 +379,14 @@ else member(e, List.tl l);</layout>
         <ml id="ID1413380594">fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);
           <layout>fun sumFpors(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else hd fpors + sumFpors(tl fpors);</layout>
         </ml>
-        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else roundN((sumFpors(fpors)) / (real (List.length fpors)), 1);
-          <layout>fun calculateIC(fpors: FPORS) = if (List.length fpors = 0) then 0.0 else roundN((sumFpors(fpors)) / (real (List.length fpors)), 1);</layout>
+        <ml id="ID1413154096">fun calculateIC(fpors: FPORS) = (
+if (List.length fpors = 0) then 0.0 
+else roundN((sumFpors(fpors)) / (real (List.length fpors)), 1)
+)
+          <layout>fun calculateIC(fpors: FPORS) = (
+if (List.length fpors = 0) then 0.0 
+else roundN((sumFpors(fpors)) / (real (List.length fpors)), 1)
+)</layout>
         </ml>
         <ml id="ID1413295515">fun mpcVehicles(mpc: INT) = 
 if mpc = 1 then 1`[(1, 4.0, 0.5, 0.5, (0.5, 0.5)), 
@@ -443,11 +449,14 @@ else
 (4, 3.8, 0.5, 0.5, (0.41, 0.42)),
 (5, 5.0, 0.8, 0.3, (0.23, 0.22))];</layout>
         </ml>
-        <ml id="ID1413303960">fun checkVCinVDR(v_msg: V_MSG) = member(#2 v_msg, vdr_content);
-          <layout>fun checkVCinVDR(v_msg: V_MSG) = member(#2 v_msg, vdr_content);</layout>
-        </ml>
-        <ml id="ID1413305420">fun returnMSG(v_msg: V_MSG) = #4 v_msg;
-          <layout>fun returnMSG(v_msg: V_MSG) = #4 v_msg;</layout>
+        <ml id="ID1413303960">fun checkVCinVDR(v_msg: V_MSG) = (
+MSC_check_vc_in_vdr(v_msg);
+member(#2 v_msg, vdr_content)
+)
+          <layout>fun checkVCinVDR(v_msg: V_MSG) = (
+MSC_check_vc_in_vdr(v_msg);
+member(#2 v_msg, vdr_content)
+)</layout>
         </ml>
         <ml id="ID1413875990">fun nextMsg(id: ID) = id + 1;
           <layout>fun nextMsg(id: ID) = id + 1;</layout>
@@ -462,6 +471,135 @@ if (msg = &quot;Highway X: Empty Traffic&quot;) then 1
 else if (msg = &quot;Highway Y: Empty Traffic&quot;) then 2
 else if (msg = &quot;Highway Z: Autobahn&quot;) then 3
 else 4;</layout>
+        </ml>
+      </block>
+      <block id="ID1506541137">
+        <id>MSC Constants</id>
+        <ml id="ID1506551891">val msc = MSC.createMSC(&quot;V2X-CPNValidation&quot;);
+          <layout>val msc = MSC.createMSC(&quot;V2X-CPNValidation&quot;);</layout>
+        </ml>
+        <ml id="ID1506541632">val adas_server = &quot;ADAS Server&quot;;
+          <layout>val adas_server = &quot;ADAS Server&quot;;</layout>
+        </ml>
+        <ml id="ID1506541540">val ran = &quot;RAN&quot;;
+          <layout>val ran = &quot;RAN&quot;;</layout>
+        </ml>
+        <ml id="ID1506541460">val mpc_vehicles = &quot;MPC Vehicles&quot;;
+          <layout>val mpc_vehicles = &quot;MPC Vehicles&quot;;</layout>
+        </ml>
+        <ml id="ID1506541392">val vehicle_v&apos; = &quot;Vehicle V&apos;&quot;;
+          <layout>val vehicle_v&apos; = &quot;Vehicle V&apos;&quot;;</layout>
+        </ml>
+        <ml id="ID1506541336">val vehicle_v = &quot;Vehicle V&quot;;
+          <layout>val vehicle_v = &quot;Vehicle V&quot;;</layout>
+        </ml>
+        <ml id="ID1506555606">val vdr = &quot;VDR&quot;;
+          <layout>val vdr = &quot;VDR&quot;;</layout>
+        </ml>
+        <ml id="ID1506552895">val _ = MSC.addProcess(msc, vehicle_v&apos;);
+          <layout>val _ = MSC.addProcess(msc, vehicle_v&apos;);</layout>
+        </ml>
+        <ml id="ID1506553673">val _ = MSC.addProcess(msc, vehicle_v);
+          <layout>val _ = MSC.addProcess(msc, vehicle_v);</layout>
+        </ml>
+        <ml id="ID1506554213">val _ = MSC.addProcess(msc, mpc_vehicles);
+          <layout>val _ = MSC.addProcess(msc, mpc_vehicles);</layout>
+        </ml>
+        <ml id="ID1506554765">val _ = MSC.addProcess(msc, ran);
+          <layout>val _ = MSC.addProcess(msc, ran);</layout>
+        </ml>
+        <ml id="ID1506556470">val _ = MSC.addProcess(msc, vdr);
+          <layout>val _ = MSC.addProcess(msc, vdr);</layout>
+        </ml>
+        <ml id="ID1506557070">val _ = MSC.addProcess(msc, adas_server);
+          <layout>val _ = MSC.addProcess(msc, adas_server);</layout>
+        </ml>
+      </block>
+      <block id="ID1506549233">
+        <id>MSC Functions</id>
+        <ml id="ID1506581121">fun MSC_notify_msg_text(msg, msg_content) = 
+String.concat [msg, String.toString msg_content, &quot;\&quot;)&quot;]
+          <layout>fun MSC_notify_msg_text(msg, msg_content) = 
+String.concat [msg, String.toString msg_content, &quot;\&quot;)&quot;]</layout>
+        </ml>
+        <ml id="ID1506557985">fun MSC_notify_msg(msg, id) =
+String.concat [msg, &quot;(id:&quot;, Int.toString id, &quot;\&quot;)&quot;]
+          <layout>fun MSC_notify_msg(msg, id) =
+String.concat [msg, &quot;(id:&quot;, Int.toString id, &quot;\&quot;)&quot;]</layout>
+        </ml>
+        <ml id="ID1506560220">fun MSC_send_msg(id, v_msg) = (
+    MSC.addInternalEvent(msc, vehicle_v&apos;, &quot;Create message.&quot;)
+    (*MSC.addEvent(msc, vehicle_v&apos;, vehicle_v, MSC_notify_msg(&quot;Send message to V, ID = &quot;, id)*)
+)
+          <layout>fun MSC_send_msg(id, v_msg) = (
+    MSC.addInternalEvent(msc, vehicle_v&apos;, &quot;Create message.&quot;)
+    (*MSC.addEvent(msc, vehicle_v&apos;, vehicle_v, MSC_notify_msg(&quot;Send message to V, ID = &quot;, id)*)
+)</layout>
+        </ml>
+        <ml id="ID1506561219">fun MSC_authenticate_ooc(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, MSC_notify_msg(&quot;Authenticate out of coverage&quot;, #1 v_msg));
+    if validVC(#2 v_msg) then
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Authenticated out of coverage&quot;)
+    else 
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Not authenticated out of coverage&quot;)
+)
+          <layout>fun MSC_authenticate_ooc(v_msg: V_MSG) = (
+    MSC.addInternalEvent(msc, vehicle_v, MSC_notify_msg(&quot;Authenticate out of coverage&quot;, #1 v_msg));
+    if validVC(#2 v_msg) then
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Authenticated out of coverage&quot;)
+    else 
+       MSC.addInternalEvent(msc, vehicle_v, &quot;Not authenticated out of coverage&quot;)
+)</layout>
+        </ml>
+        <ml id="ID1506568001">fun MSC_calculateFpors(v_msg: V_MSG) = (
+MSC.addEvent(msc, vehicle_v, mpc_vehicles, MSC_notify_msg(&quot;Calculate FPORs for &quot;, #1 v_msg))
+)
+          <layout>fun MSC_calculateFpors(v_msg: V_MSG) = (
+MSC.addEvent(msc, vehicle_v, mpc_vehicles, MSC_notify_msg(&quot;Calculate FPORs for &quot;, #1 v_msg))
+)</layout>
+        </ml>
+        <ml id="ID1506570409">fun MSC_returnFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, mpc_vehicles, vehicle_v, MSC_notify_msg(&quot;Returning FPORs for &quot;, #1 v_msg)*)
+)
+          <layout>fun MSC_returnFpors(v_msg: V_MSG) = (
+(*MSC.addEvent(msc, mpc_vehicles, vehicle_v, MSC_notify_msg(&quot;Returning FPORs for &quot;, #1 v_msg)*)
+)</layout>
+        </ml>
+        <ml id="ID1506572920">fun MSC_return_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, mpc_vehicles, vehicle_v, MSC_notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
+)
+          <layout>fun MSC_return_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, mpc_vehicles, vehicle_v, MSC_notify_msg(&quot;Calculate IC for &quot;, #1 v_msg))
+)</layout>
+        </ml>
+        <ml id="ID1506575100">fun MSC_authenticate_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, vehicle_v, ran, MSC_notify_msg(&quot;Authenticate in coverage&quot;, #1 v_msg))
+)
+          <layout>fun MSC_authenticate_ic(v_msg: V_MSG) = (
+    MSC.addEvent(msc, vehicle_v, ran, MSC_notify_msg(&quot;Authenticate in coverage&quot;, #1 v_msg))
+)</layout>
+        </ml>
+        <ml id="ID1506576449">fun MSC_check_vc_in_vdr(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, vdr, MSC_notify_msg(&quot;Check VC in VDR&quot;, #1 v_msg));
+    if checkVCinVDR(v_msg) then
+       MSC.addEvent(msc, vdr, ran, &quot;Authenticated in coverage&quot;)
+    else 
+       MSC.addEvent(msc, vdr, ran, &quot;Not authenticated in coverage&quot;)
+)
+          <layout>fun MSC_check_vc_in_vdr(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, vdr, MSC_notify_msg(&quot;Check VC in VDR&quot;, #1 v_msg));
+    if checkVCinVDR(v_msg) then
+       MSC.addEvent(msc, vdr, ran, &quot;Authenticated in coverage&quot;)
+    else 
+       MSC.addEvent(msc, vdr, ran, &quot;Not authenticated in coverage&quot;)
+)</layout>
+        </ml>
+        <ml id="ID1506578747">fun MSC_send_msg_to_server(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, adas_server, MSC_notify_msg_text(&quot;Send message to ADAS: &quot;, #4 v_msg))
+)
+          <layout>fun MSC_send_msg_to_server(v_msg: V_MSG) = (
+    MSC.addEvent(msc, ran, adas_server, MSC_notify_msg_text(&quot;Send message to ADAS: &quot;, #4 v_msg))
+)</layout>
         </ml>
       </block>
     </globbox>
@@ -2413,20 +2551,6 @@ action
         </annot>
       </arc>
       <constraints/>
-      <Aux id="ID1506609687">
-        <posattr x="-154.000000"
-                 y="-389.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <label/>
-        <text>ListDeadMarkings ()</text>
-      </Aux>
     </page>
     <page id="ID1412869626">
       <pageattr name="Comportamentos de V"/>
@@ -2803,8 +2927,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1412873996">
-          <posattr x="-606.500000"
-                   y="242.000000"/>
+          <posattr x="-811.000000"
+                   y="248.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2814,7 +2938,9 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (id, v_msg);
+action
+(MSC_send_msg(id, v_msg));</text>
         </code>
         <priority id="ID1412873998">
           <posattr x="-939.000000"
@@ -2907,7 +3033,7 @@ mensagem</text>
       </trans>
       <arc id="ID1412878669"
            orientation="PtoT"
-           order="2">
+           order="1">
         <posattr x="0.000000"
                  y="0.000000"/>
         <fillattr colour="White"
@@ -3000,8 +3126,8 @@ mensagem</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1412890117">
-          <posattr x="-499.000000"
-                   y="220.000000"/>
+          <posattr x="-467.000000"
+                   y="161.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3622,8 +3748,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1412982385">
-          <posattr x="263.000000"
-                   y="-230.000000"/>
+          <posattr x="307.500000"
+                   y="-216.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3634,9 +3760,7 @@ action
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">input (v_msg);
-output (rep_score);
-action
-(returnRepScore(v_msg));</text>
+action (MSC_authenticate_ooc(v_msg));</text>
         </code>
         <priority id="ID1412982387">
           <posattr x="37.000000"
@@ -3836,7 +3960,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if rep_score &lt; 3.5 then 1`v_msg else empty</text>
+                version="4.0.1">if #3 v_msg &lt; 3.5 then 1`v_msg else empty</text>
         </annot>
       </arc>
       <arc id="ID1412986095"
@@ -3881,7 +4005,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if rep_score &gt; 3.5 then 1`v_msg else empty</text>
+                version="4.0.1">if #3 v_msg &gt; 3.5 then 1`v_msg else empty</text>
         </annot>
       </arc>
       <constraints/>
@@ -4192,7 +4316,7 @@ Multi-Party Computation</text>
       </place>
       <place id="ID1413084701">
         <posattr x="-336.000000"
-                 y="-239.000000"/>
+                 y="-235.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4215,7 +4339,7 @@ Multi-Party Computation</text>
         </marking>
         <type id="ID1413084702">
           <posattr x="-236.000000"
-                   y="-271.000000"/>
+                   y="-267.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4229,7 +4353,7 @@ Multi-Party Computation</text>
         </type>
         <initmark id="ID1413084703">
           <posattr x="-228.000000"
-                   y="-206.000000"/>
+                   y="-202.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4310,12 +4434,12 @@ Multi-Party Computation</text>
                  h="56.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="-54.000000"
-                 y="-66.000000"
+        <marking x="0.000000"
+                 y="0.000000"
                  hidden="false">
           <snap snap_id="0"
-                anchor.horizontal="3"
-                anchor.vertical="1"/>
+                anchor.horizontal="0"
+                anchor.vertical="0"/>
         </marking>
         <type id="ID1413103578">
           <posattr x="-260.000000"
@@ -4496,8 +4620,8 @@ Multi-Party Computation</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413045997">
-          <posattr x="-381.500000"
-                   y="172.000000"/>
+          <posattr x="-629.500000"
+                   y="197.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4507,7 +4631,9 @@ Multi-Party Computation</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input(v_msg);
+action
+(MSC_calculateFpors(v_msg));</text>
         </code>
         <priority id="ID1413045999">
           <posattr x="-668.000000"
@@ -4617,7 +4743,7 @@ action
         <box w="156.000000"
              h="40.000000"/>
         <binding x="7.200000"
-                 y="16.000000"/>
+                 y="-3.000000"/>
         <cond id="ID1413099430">
           <posattr x="-423.000000"
                    y="-408.000000"/>
@@ -4773,7 +4899,7 @@ action
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413449779">
-          <posattr x="-156.500000"
+          <posattr x="-139.500000"
                    y="-552.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4784,7 +4910,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">[v_data_list = [], fpors &lt;&gt; []]</text>
+                version="4.0.1">[length v_data_list = 0]</text>
         </cond>
         <time id="ID1413147654">
           <posattr x="177.500000"
@@ -4878,7 +5004,7 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1413223669">
-          <posattr x="222.500000"
+          <posattr x="58.000000"
                    y="-136.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4889,7 +5015,9 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (v_msg);
+action
+(MSC_return_ic(v_msg));</text>
         </code>
         <priority id="ID1413192883">
           <posattr x="-38.000000"
@@ -5143,7 +5271,7 @@ action
         <placeend idref="ID1413084701"/>
         <annot id="ID1413101200">
           <posattr x="-310.000000"
-                   y="-345.000000"/>
+                   y="-343.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5522,6 +5650,64 @@ action
                 version="4.0.1">if ic &lt; 0.5 then 1`v_msg else empty</text>
         </annot>
       </arc>
+      <arc id="ID1413331057"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413115649"/>
+        <placeend idref="ID1413121025"/>
+        <bendpoint id="ID1413331060"
+                   serial="1">
+          <posattr x="-756.000000"
+                   y="-882.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <bendpoint id="ID1413331059"
+                   serial="2">
+          <posattr x="-336.000000"
+                   y="-882.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <annot id="ID1413331058">
+          <posattr x="-736.000000"
+                   y="-754.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">fpors</text>
+        </annot>
+      </arc>
       <arc id="ID1413365411"
            orientation="TtoP"
            order="1">
@@ -5655,122 +5841,6 @@ action
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">v_data_list</text>
-        </annot>
-      </arc>
-      <arc id="ID1506610255"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413115649"/>
-        <placeend idref="ID1413121025"/>
-        <bendpoint id="ID1506610257"
-                   serial="1">
-          <posattr x="-756.000000"
-                   y="-840.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <bendpoint id="ID1506610452"
-                   serial="2">
-          <posattr x="-740.522500"
-                   y="-863.117500"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1506610256">
-          <posattr x="-793.000000"
-                   y="-737.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">fpors</text>
-        </annot>
-      </arc>
-      <arc id="ID1506612199"
-           orientation="TtoP"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413147652"/>
-        <placeend idref="ID1413121025"/>
-        <bendpoint id="ID1506613745"
-                   serial="1">
-          <posattr x="126.000000"
-                   y="-924.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <bendpoint id="ID1506612202"
-                   serial="2">
-          <posattr x="-336.000000"
-                   y="-924.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <annot id="ID1506612200">
-          <posattr x="-107.000000"
-                   y="-913.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">[]</text>
         </annot>
       </arc>
       <constraints/>
@@ -5957,7 +6027,7 @@ ao servidor ADAS</text>
         </time>
         <code id="ID1413322979">
           <posattr x="457.000000"
-                   y="596.000000"/>
+                   y="603.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5968,9 +6038,8 @@ ao servidor ADAS</text>
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">input (v_msg);
-output (msg);
 action
-(returnMSG(v_msg));</text>
+(MSC_send_msg_to_server(v_msg));</text>
         </code>
         <priority id="ID1413322981">
           <posattr x="303.000000"
@@ -6048,7 +6117,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">msg</text>
+                version="4.0.1">#4 v_msg</text>
         </annot>
       </arc>
       <constraints/>
@@ -6402,8 +6471,8 @@ por RAN</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413298710">
-          <posattr x="-51.500000"
-                   y="310.000000"/>
+          <posattr x="-46.000000"
+                   y="312.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6413,7 +6482,9 @@ por RAN</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">input (v_msg);
+action
+(MSC_authenticate_ic(v_msg));</text>
         </code>
         <priority id="ID1413298712">
           <posattr x="-420.000000"
@@ -6904,22 +6975,22 @@ action
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10011.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10004.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10008.enable">
+      <option name="extensions.10007.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
       <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10011.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -6934,27 +7005,27 @@ action
           <boolean>true</boolean>
         </value>
       </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
       <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10003.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10007.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10011.options.disable">
+      <option name="extensions.10007.options.discover">
         <value>
           <boolean>false</boolean>
         </value>
       </option>
-      <option name="extensions.10007.options.discover">
+      <option name="extensions.10011.options.disable">
         <value>
           <boolean>false</boolean>
         </value>
@@ -7156,74 +7227,74 @@ action
       </option>
     </options>
     <binders>
-      <cpnbinder id="ID1412850247"
-                 x="710"
-                 y="26"
-                 width="1828"
-                 height="1313">
+      <cpnbinder id="ID1506584450"
+                 x="722"
+                 y="31"
+                 width="1816"
+                 height="766">
         <sheets>
-          <cpnsheet id="ID1413286571"
-                    panx="430.440000"
-                    pany="182.800000"
-                    zoom="1.000000"
-                    instance="ID1412869665">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413290213"
-                    panx="-19.920000"
-                    pany="-97.800000"
-                    zoom="1.000000"
-                    instance="ID1412977278">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413292660"
-                    panx="269.522500"
-                    pany="-374.117500"
-                    zoom="1.000000"
-                    instance="ID1412994338">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413296404"
-                    panx="-286.040000"
-                    pany="56.240000"
-                    zoom="1.000000"
-                    instance="ID1413027310">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413321755"
-                    panx="-545.160000"
-                    pany="577.040000"
-                    zoom="1.000000"
-                    instance="ID1413023036">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID2215"
-                    panx="-32.590000"
-                    pany="45.660000"
+          <cpnsheet id="ID1506584420"
+                    panx="306.000000"
+                    pany="221.000000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
+          <cpnsheet id="ID1506584645"
+                    panx="475.000000"
+                    pany="95.000000"
+                    zoom="1.000000"
+                    instance="ID1412869665">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506585302"
+                    panx="-286.000000"
+                    pany="-68.000000"
+                    zoom="1.000000"
+                    instance="ID1412977278">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506588246"
+                    panx="243.000000"
+                    pany="36.000000"
+                    zoom="1.000000"
+                    instance="ID1412994338">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506590425"
+                    panx="-41.000000"
+                    pany="71.000000"
+                    zoom="1.000000"
+                    instance="ID1413027310">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506596047"
+                    panx="-615.000000"
+                    pany="633.000000"
+                    zoom="1.000000"
+                    instance="ID1413023036">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
         </sheets>
         <zorder>
-          <position value="4"/>
           <position value="5"/>
+          <position value="2"/>
+          <position value="4"/>
+          <position value="1"/>
           <position value="3"/>
           <position value="0"/>
-          <position value="1"/>
-          <position value="2"/>
         </zorder>
       </cpnbinder>
     </binders>
@@ -7370,16 +7441,42 @@ action
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+        </IndexNode>
+        <IndexNode expanded="true">
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
@@ -7391,6 +7488,7 @@ action
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
       </IndexNode>
+      <IndexNode expanded="true"/>
     </IndexNode>
   </cpnet>
 </workspaceElements>

@@ -1,21 +1,21 @@
 CPN Tools state space report for:
 /cygdrive/C/Users/ldvic/Documents/V2X-CPNValidation/autenticacao-e-reputacao-distribuida.cpn
-Report generated: Fri May 10 14:49:17 2024
+Report generated: Fri May 10 14:59:59 2024
 
 
  Statistics
 ------------------------------------------------------------------------
 
   State Space
-     Nodes:  51422
-     Arcs:   157443
-     Secs:   199
+     Nodes:  40060
+     Arcs:   116743
+     Secs:   117
      Status: Full
 
   Scc Graph
-     Nodes:  51422
-     Arcs:   157047
-     Secs:   3
+     Nodes:  40060
+     Arcs:   116347
+     Secs:   2
 
 
  Boundedness Properties
@@ -56,9 +56,9 @@ Report generated: Fri May 10 14:49:17 2024
      Proof_of_Reputation'Veiculos_vizinhos_para_Multi 1
                              1          0
      Proof_of_Reputation'Vx_escolhido 1
-                             8          0
+                             7          0
      Proof_of_Reputation'Vx_possivel_candidato 1
-                             8          0
+                             7          0
      Proof_of_Reputation'Vx_rejeitado 1
                              6          0
 
@@ -91,7 +91,6 @@ Report generated: Fri May 10 14:49:17 2024
 1`(4,(4,"vnj4vk7",4.3,"Highway W: Call Emergency"))
      Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_rejeitada 1
                          1`(1,"frvgvrf",4.5,"Highway X: Empty Traffic")++
-1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")++
 1`(3,"d0sm94kzxc",3.0,"Highway Z: Autobahn")++
 1`(4,"vnj4vk7",4.3,"Highway W: Call Emergency")
      Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_verificada_e_aguardando_cobertura 1
@@ -162,8 +161,7 @@ Report generated: Fri May 10 14:49:17 2024
 1`[1.0,1.0,0.9]++
 1`[1.0,1.0,0.9,0.6]
      Proof_of_Reputation'IC_de_V'_calculado 1
-                         1`0.0++
-1`0.6++
+                         1`0.6++
 1`0.7++
 1`0.8++
 1`0.9++
@@ -284,7 +282,7 @@ Report generated: Fri May 10 14:49:17 2024
 ------------------------------------------------------------------------
 
   Dead Markings
-     409 [51422,51421,51420,51419,51418,...]
+     374 [40060,40059,40058,40057,40056,...]
 
   Dead Transition Instances
      None
