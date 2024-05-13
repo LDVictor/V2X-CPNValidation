@@ -1,0 +1,296 @@
+CPN Tools state space report for:
+/cygdrive/C/Users/ldvic/Documents/V2X-CPNValidation/autenticacao-e-reputacao-distribuida.cpn
+Report generated: Mon May 13 10:21:19 2024
+
+
+ Statistics
+------------------------------------------------------------------------
+
+  State Space
+     Nodes:  2950
+     Arcs:   7310
+     Secs:   1
+     Status: Full
+
+  Scc Graph
+     Nodes:  2950
+     Arcs:   6989
+     Secs:   0
+
+
+ Boundedness Properties
+------------------------------------------------------------------------
+
+  Best Integer Bounds
+                             Upper      Lower
+     Autenticacao_em_cobertura'Credencial_valida 1
+                             1          0
+     Autenticacao_em_cobertura'Mensagem_recebida_por_RAN 1
+                             1          0
+     Autenticacao_fora_de_cobertura'V'_possui_credencial_valida_fora_de_cobertura 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_em_cobertura 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_fora_de_cobertura 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_pelo_servidor_ADAS 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_por_V' 1
+                             2          1
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_rejeitada 1
+                             0          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_verificada_e_aguardando_cobertura 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Proxima_mensagem 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_em_cobertura 1
+                             1          0
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_fora_de_cobertura 1
+                             1          0
+     Proof_of_Reputation'Fpor_calculado_por_Vx_recebido 1
+                             1          0
+     Proof_of_Reputation'IC_de_V'_calculado 1
+                             1          0
+     Proof_of_Reputation'Mensagem_a_ter_V'_verificado 1
+                             1          0
+     Proof_of_Reputation'Veiculos_vizinhos_para_Multi 1
+                             1          0
+     Proof_of_Reputation'Vx_escolhidos 1
+                             4          0
+     Proof_of_Reputation'Vx_possivel_candidato 1
+                             4          0
+     Proof_of_Reputation'Vx_rejeitado 1
+                             6          3
+
+  Best Upper Multi-set Bounds
+     Autenticacao_em_cobertura'Credencial_valida 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Autenticacao_em_cobertura'Mensagem_recebida_por_RAN 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Autenticacao_fora_de_cobertura'V'_possui_credencial_valida_fora_de_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_em_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_fora_de_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_pelo_servidor_ADAS 1
+                         1`"Highway Y: Empty Traffic"
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_por_V' 1
+                         1`(1,(1,"frvgvrf",4.5,"Highway X: Empty Traffic"))++
+1`(2,(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic"))
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_rejeitada 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_verificada_e_aguardando_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Proxima_mensagem 1
+                         1`2++
+1`3
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_em_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_fora_de_cobertura 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Proof_of_Reputation'Fpor_calculado_por_Vx_recebido 1
+                         1`[]++
+1`[0.6]++
+1`[0.6,0.9]++
+1`[0.6,0.9,1.0]++
+1`[0.6,0.9,1.0,1.0]++
+1`[0.6,1.0]++
+1`[0.6,1.0,0.9]++
+1`[0.6,1.0,0.9,1.0]++
+1`[0.6,1.0,1.0]++
+1`[0.6,1.0,1.0,0.9]++
+1`[0.7]++
+1`[0.7,0.9]++
+1`[0.7,0.9,1.0]++
+1`[0.7,1.0]++
+1`[0.7,1.0,0.9]++
+1`[0.9]++
+1`[0.9,0.6]++
+1`[0.9,0.6,1.0]++
+1`[0.9,0.6,1.0,1.0]++
+1`[0.9,0.7]++
+1`[0.9,0.7,1.0]++
+1`[0.9,1.0]++
+1`[0.9,1.0,0.6]++
+1`[0.9,1.0,0.6,1.0]++
+1`[0.9,1.0,0.7]++
+1`[0.9,1.0,1.0]++
+1`[0.9,1.0,1.0,0.6]++
+1`[1.0]++
+1`[1.0,0.6]++
+1`[1.0,0.6,0.9]++
+1`[1.0,0.6,0.9,1.0]++
+1`[1.0,0.6,1.0]++
+1`[1.0,0.6,1.0,0.9]++
+1`[1.0,0.7]++
+1`[1.0,0.7,0.9]++
+1`[1.0,0.9]++
+1`[1.0,0.9,0.6]++
+1`[1.0,0.9,0.6,1.0]++
+1`[1.0,0.9,0.7]++
+1`[1.0,0.9,1.0]++
+1`[1.0,0.9,1.0,0.6]++
+1`[1.0,1.0]++
+1`[1.0,1.0,0.6]++
+1`[1.0,1.0,0.6,0.9]++
+1`[1.0,1.0,0.9]++
+1`[1.0,1.0,0.9,0.6]
+     Proof_of_Reputation'IC_de_V'_calculado 1
+                         1`0.6++
+1`0.7++
+1`0.8++
+1`0.9++
+1`1.0
+     Proof_of_Reputation'Mensagem_a_ter_V'_verificado 1
+                         1`(2,"sdfe296nvb",4.8,"Highway Y: Empty Traffic")
+     Proof_of_Reputation'Veiculos_vizinhos_para_Multi 1
+                         1`[]++
+1`[(1,1.0,0.5,0.5,(0.5,0.5)),(2,3.5,0.4,0.3,(0.48,0.34)),(3,4.5,0.5,0.5,(0.5,0.5)),(4,3.8,0.5,0.5,(0.41,0.42)),(5,5.0,0.8,0.3,(0.23,0.22))]++
+1`[(1,4.0,0.45,0.48,(0.45,0.53)),(2,3.5,0.4,0.3,(0.28,0.34)),(3,4.7,0.5,0.53,(0.48,0.44)),(4,3.4,0.8,0.3,(0.1,0.2)),(5,4.9,0.5,0.48,(0.43,0.42))]++
+1`[(1,4.0,0.5,0.5,(0.5,0.5)),(2,3.5,0.4,0.3,(0.28,0.34)),(3,4.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(1,4.0,0.5,0.5,(0.5,0.5)),(2,4.5,0.4,0.3,(0.28,0.34)),(3,2.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.2,0.3,(0.12,0.21)),(5,4.9,0.5,0.5,(0.43,0.42))]++
+1`[(1,4.0,0.5,0.5,(0.5,0.5)),(2,4.5,0.4,0.3,(0.28,0.34)),(3,4.8,0.3,0.13,(0.78,0.34)),(4,4.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(2,3.5,0.4,0.3,(0.28,0.34)),(3,4.7,0.5,0.53,(0.48,0.44)),(4,3.4,0.8,0.3,(0.1,0.2)),(5,4.9,0.5,0.48,(0.43,0.42))]++
+1`[(2,3.5,0.4,0.3,(0.28,0.34)),(3,4.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(2,3.5,0.4,0.3,(0.48,0.34)),(3,4.5,0.5,0.5,(0.5,0.5)),(4,3.8,0.5,0.5,(0.41,0.42)),(5,5.0,0.8,0.3,(0.23,0.22))]++
+1`[(2,4.5,0.4,0.3,(0.28,0.34)),(3,2.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.2,0.3,(0.12,0.21)),(5,4.9,0.5,0.5,(0.43,0.42))]++
+1`[(2,4.5,0.4,0.3,(0.28,0.34)),(3,4.8,0.3,0.13,(0.78,0.34)),(4,4.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(3,2.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.2,0.3,(0.12,0.21)),(5,4.9,0.5,0.5,(0.43,0.42))]++
+1`[(3,4.5,0.5,0.5,(0.5,0.5)),(4,3.8,0.5,0.5,(0.41,0.42)),(5,5.0,0.8,0.3,(0.23,0.22))]++
+1`[(3,4.7,0.5,0.53,(0.48,0.44)),(4,3.4,0.8,0.3,(0.1,0.2)),(5,4.9,0.5,0.48,(0.43,0.42))]++
+1`[(3,4.8,0.3,0.13,(0.78,0.34)),(4,3.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(3,4.8,0.3,0.13,(0.78,0.34)),(4,4.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(4,3.0,0.2,0.3,(0.12,0.21)),(5,4.9,0.5,0.5,(0.43,0.42))]++
+1`[(4,3.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(4,3.4,0.8,0.3,(0.1,0.2)),(5,4.9,0.5,0.48,(0.43,0.42))]++
+1`[(4,3.8,0.5,0.5,(0.41,0.42)),(5,5.0,0.8,0.3,(0.23,0.22))]++
+1`[(4,4.0,0.8,0.3,(0.1,0.2)),(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(5,4.9,0.5,0.48,(0.43,0.42))]++
+1`[(5,4.9,0.5,0.5,(0.43,0.42))]++
+1`[(5,4.9,0.8,0.3,(0.23,0.22))]++
+1`[(5,5.0,0.8,0.3,(0.23,0.22))]
+     Proof_of_Reputation'Vx_escolhidos 1
+                         1`(1,4.0,0.45,0.48,(0.45,0.53))++
+1`(1,4.0,0.5,0.5,(0.5,0.5))++
+1`(2,3.5,0.4,0.3,(0.28,0.34))++
+1`(2,3.5,0.4,0.3,(0.48,0.34))++
+1`(2,4.5,0.4,0.3,(0.28,0.34))++
+1`(3,4.5,0.5,0.5,(0.5,0.5))++
+1`(3,4.7,0.5,0.53,(0.48,0.44))++
+1`(4,3.8,0.5,0.5,(0.41,0.42))++
+1`(5,4.9,0.5,0.48,(0.43,0.42))++
+1`(5,4.9,0.5,0.5,(0.43,0.42))
+     Proof_of_Reputation'Vx_possivel_candidato 1
+                         1`(1,1.0,0.5,0.5,(0.5,0.5))++
+1`(1,4.0,0.45,0.48,(0.45,0.53))++
+1`(1,4.0,0.5,0.5,(0.5,0.5))++
+1`(2,3.5,0.4,0.3,(0.28,0.34))++
+1`(2,3.5,0.4,0.3,(0.48,0.34))++
+1`(2,4.5,0.4,0.3,(0.28,0.34))++
+1`(3,4.5,0.5,0.5,(0.5,0.5))++
+1`(3,4.7,0.5,0.53,(0.48,0.44))++
+1`(4,3.8,0.5,0.5,(0.41,0.42))++
+1`(5,4.9,0.5,0.48,(0.43,0.42))++
+1`(5,4.9,0.5,0.5,(0.43,0.42))
+     Proof_of_Reputation'Vx_rejeitado 1
+                         1`(1,1.0,0.5,0.5,(0.5,0.5))++
+1`(3,2.8,0.3,0.13,(0.78,0.34))++
+2`(3,4.8,0.3,0.13,(0.78,0.34))++
+1`(4,3.0,0.2,0.3,(0.12,0.21))++
+1`(4,3.0,0.8,0.3,(0.1,0.2))++
+1`(4,3.4,0.8,0.3,(0.1,0.2))++
+2`(4,4.0,0.8,0.3,(0.1,0.2))++
+2`(5,4.9,0.8,0.3,(0.23,0.22))++
+1`(5,5.0,0.8,0.3,(0.23,0.22))
+
+  Best Lower Multi-set Bounds
+     Autenticacao_em_cobertura'Credencial_valida 1
+                         empty
+     Autenticacao_em_cobertura'Mensagem_recebida_por_RAN 1
+                         empty
+     Autenticacao_fora_de_cobertura'V'_possui_credencial_valida_fora_de_cobertura 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_em_cobertura 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_autenticada_fora_de_cobertura 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_pelo_servidor_ADAS 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_recebida_por_V' 1
+                         1`(1,(1,"frvgvrf",4.5,"Highway X: Empty Traffic"))
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_rejeitada 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Mensagem_verificada_e_aguardando_cobertura 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Proxima_mensagem 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_em_cobertura 1
+                         empty
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'V_fora_de_cobertura 1
+                         empty
+     Proof_of_Reputation'Fpor_calculado_por_Vx_recebido 1
+                         empty
+     Proof_of_Reputation'IC_de_V'_calculado 1
+                         empty
+     Proof_of_Reputation'Mensagem_a_ter_V'_verificado 1
+                         empty
+     Proof_of_Reputation'Veiculos_vizinhos_para_Multi 1
+                         empty
+     Proof_of_Reputation'Vx_escolhidos 1
+                         empty
+     Proof_of_Reputation'Vx_possivel_candidato 1
+                         empty
+     Proof_of_Reputation'Vx_rejeitado 1
+                         1`(3,4.8,0.3,0.13,(0.78,0.34))++
+1`(4,4.0,0.8,0.3,(0.1,0.2))++
+1`(5,4.9,0.8,0.3,(0.23,0.22))
+
+
+ Home Properties
+------------------------------------------------------------------------
+
+  Home Markings
+     None
+
+
+ Liveness Properties
+------------------------------------------------------------------------
+
+  Dead Markings
+     50 [2950,2949,2948,2947,2946,...]
+
+  Dead Transition Instances
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Habilita_nova_mensagem_por_rejeicao 1
+
+  Live Transition Instances
+     None
+
+
+ Fairness Properties
+------------------------------------------------------------------------
+
+  Impartial Transition Instances
+     Comportamentos_de_V'Verifica_cobertura_novamente 1
+
+  Fair Transition Instances
+     Autenticacao_em_cobertura'RAN_checa_credencial_no_VDR 1
+     Autenticacao_em_cobertura'RAN_checa_rep_score 1
+     Autenticacao_em_cobertura'V_envia_a_mensagem_pendente_ao_RAN 1
+     Autenticacao_fora_de_cobertura'Verifica_credencial_de_V' 1
+     Autenticacao_fora_de_cobertura'Verifica_reputacao_de_V' 1
+     Comportamentos_de_V'Verifica_se_V_esta_ou_nao_em_cobertura 1
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Habilita_nova_mensagem_por_aprovacao 1
+     Modelo_de_Autenticacao_e_Reputacao_Distribuida'Habilita_nova_mensagem_por_rejeicao 1
+     Proof_of_Reputation'Calcula_IC_de_V' 1
+     Proof_of_Reputation'Calcula_SW 1
+     Proof_of_Reputation'Inicia_o_Proof_of_Reputation 1
+     Proof_of_Reputation'Verifica_se_o_IC_foi_valido 1
+     RAN'RAN_envia_o_conteudo_da_mensagem_ao_servidor_ADAS 1
+
+  Just Transition Instances
+     None
+
+  Transition Instances with No Fairness
+     Proof_of_Reputation'Calcula_Fpor_de_V' 1
+     Proof_of_Reputation'Verifica_score_de_Vx 1
