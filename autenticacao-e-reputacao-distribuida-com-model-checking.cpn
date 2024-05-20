@@ -7034,8 +7034,8 @@ action
       <pageattr name="ASKCTL_USE"/>
       <constraints/>
       <Aux id="ID1506645332">
-        <posattr x="-492.000000"
-                 y="336.000000"/>
+        <posattr x="-504.000000"
+                 y="444.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -7045,7 +7045,21 @@ action
         <textattr colour="Black"
                   bold="false"/>
         <label/>
-        <text>use(ogpath^&quot;/ASKCTL/ASKCTLloader.sml&quot;);</text>
+        <text>use(ogpath^&quot;ASKCTL/ASKCTLloader.sml&quot;);</text>
+      </Aux>
+      <Aux id="ID1506652028">
+        <posattr x="-504.000000"
+                 y="294.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>use(&quot;C:/Program Files (x86)/CPN Tools/cpnsim/statespacefiles/ASKCTL/ASKCTLloader.sml&quot;);</text>
       </Aux>
     </page>
     <page id="ID1506645525">
@@ -7067,6 +7081,24 @@ action
 indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao verificada pelo algoritmo de reputacao.*)
 
 (* CTL: EF(vehicle_authenticated_ooc)*)</text>
+      </Aux>
+      <Aux id="ID1506648819">
+        <posattr x="-546.000000"
+                 y="252.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <label/>
+        <text>fun vehicle_authenticated_ooc v = st_TI (ArcToTI (v)) = &quot;Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_fora_de_cobertura 1&quot;;
+
+val formula = POS(MODAL(AF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)));
+
+eval_node formula InitNode;</text>
       </Aux>
     </page>
     <instances>
@@ -7109,12 +7141,7 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7124,7 +7151,22 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10007.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10011.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7132,6 +7174,26 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
       <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10004.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10008.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10007.options.discover">
+        <value>
+          <boolean>false</boolean>
+        </value>
+      </option>
+      <option name="extensions.10011.options.disable">
+        <value>
+          <boolean>false</boolean>
         </value>
       </option>
       <option name="repavg">
@@ -7332,98 +7394,48 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
     </options>
     <binders>
       <cpnbinder id="ID1412850247"
-                 x="443"
-                 y="29"
-                 width="1451"
-                 height="957">
+                 x="436"
+                 y="30"
+                 width="2104"
+                 height="1307">
         <sheets>
-          <cpnsheet id="ID1413290213"
-                    panx="-22.920000"
-                    pany="-97.800000"
-                    zoom="1.000000"
-                    instance="ID1412977278">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413292660"
-                    panx="149.522500"
-                    pany="-349.117500"
-                    zoom="1.000000"
-                    instance="ID1412994338">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413296404"
-                    panx="-286.040000"
-                    pany="56.240000"
-                    zoom="1.000000"
-                    instance="ID1413027310">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413321755"
-                    panx="-545.160000"
-                    pany="577.040000"
-                    zoom="1.000000"
-                    instance="ID1413023036">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID2215"
-                    panx="2.410000"
-                    pany="48.660000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1413286571"
-                    panx="446.440000"
-                    pany="90.800000"
-                    zoom="1.000000"
-                    instance="ID1412869665">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1506645298"
-                    panx="0.000000"
-                    pany="0.000000"
-                    zoom="1.000000"
-                    instance="ID1506645257">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
           <cpnsheet id="ID1506645737"
-                    panx="0.000000"
-                    pany="0.000000"
+                    panx="-147.000000"
+                    pany="155.000000"
                     zoom="1.000000"
                     instance="ID1506645527">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
+          <cpnsheet id="ID1506650007"
+                    panx="-103.000000"
+                    pany="91.000000"
+                    zoom="1.000000"
+                    instance="ID2149">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506651131"
+                    panx="116.000000"
+                    pany="312.000000"
+                    zoom="1.000000"
+                    instance="ID1506645257">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
         </sheets>
         <zorder>
-          <position value="3"/>
-          <position value="5"/>
+          <position value="1"/>
           <position value="0"/>
           <position value="2"/>
-          <position value="1"/>
-          <position value="4"/>
-          <position value="6"/>
-          <position value="7"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="false">
+    <IndexNode expanded="true">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -7485,6 +7497,16 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
+          <IndexNode expanded="false"/>
+        </IndexNode>
+        <IndexNode expanded="false">
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
@@ -7569,7 +7591,7 @@ indicando que o veculo foi autenticado fora de cobertura e ter sua reputacao ver
         </IndexNode>
       </IndexNode>
       <IndexNode expanded="false"/>
-      <IndexNode expanded="false">
+      <IndexNode expanded="true">
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>
         <IndexNode expanded="true"/>

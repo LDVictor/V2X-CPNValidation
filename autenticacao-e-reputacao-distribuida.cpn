@@ -7334,8 +7334,8 @@ action
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="149.522500"
-                    pany="-349.117500"
+                    panx="213.522500"
+                    pany="-310.117500"
                     zoom="1.000000"
                     instance="ID1412994338">
             <zorder>
@@ -7381,11 +7381,11 @@ action
         </sheets>
         <zorder>
           <position value="3"/>
+          <position value="2"/>
+          <position value="4"/>
           <position value="5"/>
           <position value="0"/>
-          <position value="2"/>
           <position value="1"/>
-          <position value="4"/>
         </zorder>
       </cpnbinder>
     </binders>
