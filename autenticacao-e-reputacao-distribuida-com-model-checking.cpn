@@ -7316,7 +7316,7 @@ eval_node formula_6 InitNode;</text>
         <label/>
         <text>(*! (! Auth_OoC) - Garante que um veculo no pode ser autenticado fora de cobertura se no possuir uma credencial verificvel vlida via verificao fora de cobertura.*)
 
-(* CTL: !EF(!vehicle_authenticated_ooc)*)</text>
+(* CTL: EF(!vehicle_authenticated_ooc =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506694349">
         <posattr x="-840.000000"
@@ -7331,8 +7331,9 @@ eval_node formula_6 InitNode;</text>
                   bold="false"/>
         <label/>
         <text>fun vehicle_authenticated_ooc v = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_fora_de_cobertura 1 v &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
-val formula_7 = NOT(NOT(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc))));
+val formula_7 = OR(NOT(NOT(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)))), POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_7 InitNode;</text>
       </Aux>
@@ -7354,7 +7355,7 @@ eval_node formula_7 InitNode;</text>
         <label/>
         <text>(*! (Auth_OoC ^ ! Rep_OoC) - Garante que um veculo no pode ser validado fora de cobertura se, mesmo que possua uma credencial verificvel vlida, no possuir uma reputao confivel de acordo com o algoritmo de reputao.*)
 
-(* CTL: !EF(vehicle_authenticated_ooc ^ !vehicle_proof_of_reputation_ooc)*)</text>
+(* CTL: EF((vehicle_authenticated_ooc ^ !vehicle_proof_of_reputation_ooc)  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506703014">
         <posattr x="-773.000000"
@@ -7370,8 +7371,10 @@ eval_node formula_7 InitNode;</text>
         <label/>
         <text>fun vehicle_authenticated_ooc v1 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_fora_de_cobertura 1 v1 &lt;&gt; empty;
 fun vehicle_proof_of_reputation_ooc v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_verificada_e_aguardando_cobertura 1 v2 &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
-val formula_8 = NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), NOT(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)))));
+val formula_8 = OR(NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), NOT(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc))))), 
+POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_8 InitNode;</text>
       </Aux>
@@ -7393,7 +7396,7 @@ eval_node formula_8 InitNode;</text>
         <label/>
         <text>(*! (! Auth_IC) - Garante que um veculo no pode ser autenticado em cobertura se no possuir uma credencial verificvel vlida via verificao em cobertura.*)
 
-(* CTL: !EF(!vehicle_authenticated_ic)*)</text>
+(* CTL: EF(!vehicle_authenticated_ic  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506713133">
         <posattr x="-798.000000"
@@ -7408,8 +7411,9 @@ eval_node formula_8 InitNode;</text>
                   bold="false"/>
         <label/>
         <text>fun vehicle_authenticated_ic v = Mark.Autenticacao_em_cobertura&apos;Credencial_valida 1 v &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
-val formula_9 = NOT(NOT(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic))));
+val formula_9 = OR(NOT(NOT(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)))), POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_9 InitNode;</text>
       </Aux>
@@ -7432,7 +7436,7 @@ eval_node formula_9 InitNode;</text>
         <text>(*! (Auth_OoC ^ Rep_OoC ^ ! Auth_IC)  - Garante que um veculo no pode ser autenticado em cobertura se, mesmo que possua uma credencial verificvel vlida via verificao fora de cobertura e uma reputao vlida fora de cobertura, 
 no possuir uma credencial verificvel vlida via verificao em cobertura.*)
 
-(* CTL: !EF(vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ !vehicle_authenticated_ic)*)</text>
+(* CTL: EF((vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ !vehicle_authenticated_ic)  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506728128">
         <posattr x="-798.000000"
@@ -7450,7 +7454,8 @@ no possuir uma credencial verificvel vlida via verificao em cobertura.*)
 fun vehicle_proof_of_reputation_ooc v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_verificada_e_aguardando_cobertura 1 v2 &lt;&gt; empty;
 fun vehicle_authenticated_ic v3 = Mark.Autenticacao_em_cobertura&apos;Credencial_valida 1 v3  &lt;&gt; empty;
 
-val formula_10 = NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), AND(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)), NOT(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic))))));
+val formula_10 = OR(NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), AND(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)), 
+NOT(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)))))), POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_10 InitNode;</text>
       </Aux>
@@ -7472,7 +7477,7 @@ eval_node formula_10 InitNode;</text>
         <label/>
         <text>(*! (! Rep_IC) - Garante que um veculo com credencial vlida no pode ser validado em cobertura se no possuir uma reputao confivel via verificao em cobertura.*)
 
-(* CTL: !EF(vehicle_auhenticated_ic ^ !vehicle_valid_reputation_ic)*)</text>
+(* CTL: EF((vehicle_auhenticated_ic ^ !vehicle_valid_reputation_ic)  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506751561">
         <posattr x="-817.000000"
@@ -7488,8 +7493,10 @@ eval_node formula_10 InitNode;</text>
         <label/>
         <text>fun vehicle_authenticated_ic v1 = Mark.Autenticacao_em_cobertura&apos;Credencial_valida 1 v1 &lt;&gt; empty;
 fun vehicle_valid_reputation_ic v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_em_cobertura 1 v2 &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
-val formula_11 = NOT(AND(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)), NOT(POS(NF(&quot;validated_reputation_ic&quot;, vehicle_valid_reputation_ic)))));
+val formula_11 = OR(NOT(AND(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)), NOT(POS(NF(&quot;validated_reputation_ic&quot;, vehicle_valid_reputation_ic))))),
+POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_11 InitNode;</text>
       </Aux>
@@ -7512,7 +7519,7 @@ eval_node formula_11 InitNode;</text>
         <text>(*! (Auth_OoC ^ Rep_OoC ^ Auth_IC ^ ! Rep_IC) - Garante que um veculo no pode ser validado em cobertura se, mesmo que possua uma credencial verificvel vlida via 
 verificao fora de cobertura, uma reputao vlida fora de cobertura e uma credencial verificvel vlida em cobertura, no possuir uma reputao confivel via verificao em cobertura.*)
 
-(* CTL: !EF(vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ !vehicle_valid_reputation_ic)*)</text>
+(* CTL: EF((vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ vehicle_valid_reputation_ic)  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506777403">
         <posattr x="-840.000000"
@@ -7530,9 +7537,11 @@ verificao fora de cobertura, uma reputao vlida fora de cobertura e uma credencia
 fun vehicle_proof_of_reputation_ooc v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_verificada_e_aguardando_cobertura 1 v2 &lt;&gt; empty;
 fun vehicle_authenticated_ic v3 = Mark.Autenticacao_em_cobertura&apos;Credencial_valida 1 v3 &lt;&gt; empty;
 fun vehicle_valid_reputation_ic v4 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_em_cobertura 1 v4 &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
-val formula_12 = NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), AND(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)), 
-AND(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)), NOT(POS(NF(&quot;validated_reputation_ic&quot;, vehicle_valid_reputation_ic)))))));
+val formula_12 = OR(NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), AND(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)), 
+AND(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)), NOT(POS(NF(&quot;validated_reputation_ic&quot;, vehicle_valid_reputation_ic))))))), 
+POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
 
 eval_node formula_12 InitNode;</text>
       </Aux>
@@ -7541,8 +7550,8 @@ eval_node formula_12 InitNode;</text>
       <pageattr name="ASKCTL_P13"/>
       <constraints/>
       <Aux id="ID1506806313">
-        <posattr x="-798.000000"
-                 y="451.000000"/>
+        <posattr x="-630.000000"
+                 y="393.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -7554,7 +7563,7 @@ eval_node formula_12 InitNode;</text>
         <label/>
         <text>(*Integ_MSG - Garante que um veculo com credencial verificvel vlida e reputao confivel, aps o processo de autenticao e reputao fora de cobertura e em cobertura, tenha sua mensagem devidamente transmitida ao servidor ADAS.*)
 
-(* CTL: AG(vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ vehicle_valid_reputation_ic =&gt; AF(message_received_by_adas))*)
+(* CTL: AG((vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ vehicle_valid_reputation_ic) =&gt; AF(message_received_by_adas))*)
 
 fun vehicle_authenticated_ooc v1 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_fora_de_cobertura 1 v1 &lt;&gt; empty;
 fun vehicle_proof_of_reputation_ooc v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_verificada_e_aguardando_cobertura 1 v2 &lt;&gt; empty;
@@ -7562,13 +7571,10 @@ fun vehicle_authenticated_ic v3 = Mark.Autenticacao_em_cobertura&apos;Credencial
 fun vehicle_valid_reputation_ic v4 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_em_cobertura 1 v4 &lt;&gt; empty;
 fun message_received_by_adas v5 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_recebida_pelo_servidor_ADAS 1 v5 &lt;&gt; empty;
 
-val formula_13 = EV(OR(NOT(AND(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc), AND(NF(&quot;proof_of_reputation_ooc&quot;, vehicle_proof_of_reputation_ooc), AND(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic), NF(&quot;valid_reputation_ic&quot;, vehicle_valid_reputation_ic))))),
-INV(NF(&quot;message_received_by_adas&quot;, message_received_by_adas))));
+val formula_13 = INV(OR(NOT(AND(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc), AND(NF(&quot;proof_of_reputation_ooc&quot;, vehicle_proof_of_reputation_ooc), AND(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic), NF(&quot;valid_reputation_ic&quot;, vehicle_valid_reputation_ic))))), 
+EV(NF(&quot;message_received_by_adas&quot;, message_received_by_adas))));
 
-eval_node formula_13 InitNode;
-
-
-</text>
+eval_node formula_13 InitNode;</text>
       </Aux>
     </page>
     <instances>
@@ -7635,7 +7641,7 @@ eval_node formula_13 InitNode;
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7645,12 +7651,12 @@ eval_node formula_13 InitNode;
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10005.enable">
+      <option name="extensions.10003.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7860,18 +7866,9 @@ eval_node formula_13 InitNode;
       <cpnbinder id="ID1412850247"
                  x="436"
                  y="30"
-                 width="2104"
-                 height="1307">
+                 width="1646"
+                 height="938">
         <sheets>
-          <cpnsheet id="ID1506650007"
-                    panx="-82.000000"
-                    pany="65.000000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
           <cpnsheet id="ID1506651131"
                     panx="50.000000"
                     pany="848.000000"
@@ -7927,8 +7924,8 @@ eval_node formula_13 InitNode;
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506677324"
-                    panx="220.000000"
-                    pany="183.000000"
+                    panx="63.000000"
+                    pany="193.000000"
                     zoom="1.000000"
                     instance="ID1506676600">
             <zorder>
@@ -7936,8 +7933,8 @@ eval_node formula_13 InitNode;
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506690042"
-                    panx="295.000000"
-                    pany="247.000000"
+                    panx="66.000000"
+                    pany="189.000000"
                     zoom="1.000000"
                     instance="ID1506689132">
             <zorder>
@@ -7945,8 +7942,8 @@ eval_node formula_13 InitNode;
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506699337"
-                    panx="126.000000"
-                    pany="94.000000"
+                    panx="129.000000"
+                    pany="99.000000"
                     zoom="1.000000"
                     instance="ID1506698313">
             <zorder>
@@ -7972,35 +7969,17 @@ eval_node formula_13 InitNode;
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506801586"
-                    panx="-117.000000"
-                    pany="301.000000"
+                    panx="-35.000000"
+                    pany="376.000000"
                     zoom="1.000000"
                     instance="ID1506799716">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <cpnsheet id="ID1506673162"
-                    panx="-177.000000"
-                    pany="137.000000"
-                    zoom="1.000000"
-                    instance="ID1413027310">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1506659179"
-                    panx="69.000000"
-                    pany="-314.000000"
-                    zoom="1.000000"
-                    instance="ID1412994338">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
           <cpnsheet id="ID1506722931"
-                    panx="155.000000"
-                    pany="217.000000"
+                    panx="-11.000000"
+                    pany="291.000000"
                     zoom="1.000000"
                     instance="ID1506721661">
             <zorder>
@@ -8008,8 +7987,8 @@ eval_node formula_13 InitNode;
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506764904"
-                    panx="131.000000"
-                    pany="179.000000"
+                    panx="-16.000000"
+                    pany="402.000000"
                     zoom="1.000000"
                     instance="ID1506763286">
             <zorder>
@@ -8018,9 +7997,8 @@ eval_node formula_13 InitNode;
           </cpnsheet>
         </sheets>
         <zorder>
-          <position value="13"/>
-          <position value="1"/>
           <position value="0"/>
+          <position value="1"/>
           <position value="2"/>
           <position value="3"/>
           <position value="4"/>
@@ -8029,12 +8007,10 @@ eval_node formula_13 InitNode;
           <position value="7"/>
           <position value="8"/>
           <position value="9"/>
-          <position value="10"/>
-          <position value="14"/>
-          <position value="11"/>
-          <position value="15"/>
           <position value="12"/>
-          <position value="16"/>
+          <position value="10"/>
+          <position value="13"/>
+          <position value="11"/>
         </zorder>
       </cpnbinder>
     </binders>
