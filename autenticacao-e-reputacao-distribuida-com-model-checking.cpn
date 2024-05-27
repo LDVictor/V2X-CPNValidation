@@ -7035,7 +7035,7 @@ action
       <constraints/>
       <Aux id="ID1506645332">
         <posattr x="-504.000000"
-                 y="444.000000"/>
+                 y="448.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -7046,20 +7046,6 @@ action
                   bold="false"/>
         <label/>
         <text>use(ogpath^&quot;ASKCTL/ASKCTLloader.sml&quot;);</text>
-      </Aux>
-      <Aux id="ID1506652028">
-        <posattr x="-504.000000"
-                 y="294.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <label/>
-        <text>use(&quot;C:/Program Files (x86)/CPN Tools/cpnsim/statespacefiles/ASKCTL/ASKCTLloader.sml&quot;);</text>
       </Aux>
     </page>
     <page id="ID1506645525">
@@ -7320,7 +7306,7 @@ eval_node formula_6 InitNode;</text>
       </Aux>
       <Aux id="ID1506694349">
         <posattr x="-840.000000"
-                 y="378.000000"/>
+                 y="368.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -7453,6 +7439,7 @@ no possuir uma credencial verificvel vlida via verificao em cobertura.*)
         <text>fun vehicle_authenticated_ooc v1 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_autenticada_fora_de_cobertura 1 v1 &lt;&gt; empty;
 fun vehicle_proof_of_reputation_ooc v2 = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_verificada_e_aguardando_cobertura 1 v2 &lt;&gt; empty;
 fun vehicle_authenticated_ic v3 = Mark.Autenticacao_em_cobertura&apos;Credencial_valida 1 v3  &lt;&gt; empty;
+fun vehicle_rejected x = Mark.Modelo_de_Autenticacao_e_Reputacao_Distribuida&apos;Mensagem_rejeitada 1 x &lt;&gt; empty;
 
 val formula_10 = OR(NOT(AND(POS(NF(&quot;authenticated_ooc&quot;, vehicle_authenticated_ooc)), AND(POS(NF(&quot;validated_ooc&quot;, vehicle_proof_of_reputation_ooc)), 
 NOT(POS(NF(&quot;authenticated_ic&quot;, vehicle_authenticated_ic)))))), POS(NF(&quot;vehicle_rejected&quot;, vehicle_rejected)));
@@ -7519,7 +7506,7 @@ eval_node formula_11 InitNode;</text>
         <text>(*! (Auth_OoC ^ Rep_OoC ^ Auth_IC ^ ! Rep_IC) - Garante que um veculo no pode ser validado em cobertura se, mesmo que possua uma credencial verificvel vlida via 
 verificao fora de cobertura, uma reputao vlida fora de cobertura e uma credencial verificvel vlida em cobertura, no possuir uma reputao confivel via verificao em cobertura.*)
 
-(* CTL: EF((vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ vehicle_valid_reputation_ic)  =&gt; vehicle_rejected)*)</text>
+(* CTL: EF((vehicle_authenticated_ooc ^ vehicle_proof_of_reputation_ooc ^ vehicle_authenticated_ic ^ !vehicle_valid_reputation_ic)  =&gt; vehicle_rejected)*)</text>
       </Aux>
       <Aux id="ID1506777403">
         <posattr x="-840.000000"
@@ -7641,16 +7628,6 @@ eval_node formula_13 InitNode;</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10002.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
       <option name="extensions.10005.enable">
         <value>
           <boolean>true</boolean>
@@ -7662,6 +7639,16 @@ eval_node formula_13 InitNode;</text>
         </value>
       </option>
       <option name="extensions.10006.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10002.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7870,8 +7857,8 @@ eval_node formula_13 InitNode;</text>
                  height="938">
         <sheets>
           <cpnsheet id="ID1506651131"
-                    panx="50.000000"
-                    pany="848.000000"
+                    panx="88.000000"
+                    pany="693.000000"
                     zoom="1.000000"
                     instance="ID1506645257">
             <zorder>
@@ -7915,8 +7902,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506668298"
-                    panx="261.000000"
-                    pany="246.000000"
+                    panx="233.000000"
+                    pany="244.000000"
                     zoom="1.000000"
                     instance="ID1506667742">
             <zorder>
@@ -7924,8 +7911,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506677324"
-                    panx="63.000000"
-                    pany="193.000000"
+                    panx="82.000000"
+                    pany="202.000000"
                     zoom="1.000000"
                     instance="ID1506676600">
             <zorder>
@@ -7942,8 +7929,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506699337"
-                    panx="129.000000"
-                    pany="99.000000"
+                    panx="36.000000"
+                    pany="136.000000"
                     zoom="1.000000"
                     instance="ID1506698313">
             <zorder>
@@ -7960,8 +7947,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506744839"
-                    panx="167.000000"
-                    pany="202.000000"
+                    panx="128.000000"
+                    pany="288.000000"
                     zoom="1.000000"
                     instance="ID1506743377">
             <zorder>
@@ -7969,8 +7956,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506801586"
-                    panx="-35.000000"
-                    pany="376.000000"
+                    panx="-45.000000"
+                    pany="457.000000"
                     zoom="1.000000"
                     instance="ID1506799716">
             <zorder>
@@ -7978,8 +7965,8 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506722931"
-                    panx="-11.000000"
-                    pany="291.000000"
+                    panx="111.000000"
+                    pany="272.000000"
                     zoom="1.000000"
                     instance="ID1506721661">
             <zorder>
@@ -7987,17 +7974,25 @@ eval_node formula_13 InitNode;</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1506764904"
-                    panx="-16.000000"
-                    pany="402.000000"
+                    panx="168.000000"
+                    pany="348.000000"
                     zoom="1.000000"
                     instance="ID1506763286">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
+          <cpnsheet id="ID1506814504"
+                    panx="110.000000"
+                    pany="163.000000"
+                    zoom="1.000000"
+                    instance="ID2149">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
         </sheets>
         <zorder>
-          <position value="0"/>
           <position value="1"/>
           <position value="2"/>
           <position value="3"/>
@@ -8007,10 +8002,12 @@ eval_node formula_13 InitNode;</text>
           <position value="7"/>
           <position value="8"/>
           <position value="9"/>
-          <position value="12"/>
-          <position value="10"/>
           <position value="13"/>
           <position value="11"/>
+          <position value="10"/>
+          <position value="14"/>
+          <position value="0"/>
+          <position value="12"/>
         </zorder>
       </cpnbinder>
     </binders>
@@ -8080,9 +8077,7 @@ eval_node formula_13 InitNode;</text>
           <IndexNode expanded="false"/>
         </IndexNode>
       </IndexNode>
-      <IndexNode expanded="false">
-        <IndexNode expanded="false"/>
-      </IndexNode>
+      <IndexNode expanded="false"/>
       <IndexNode expanded="true">
         <IndexNode expanded="false">
           <IndexNode expanded="true"/>
