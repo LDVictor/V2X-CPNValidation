@@ -469,7 +469,7 @@ else 4;</layout>
     <page id="ID6">
       <pageattr name="Modelo de Autenticacao e Reputacao Distribuida"/>
       <place id="ID1412850720">
-        <posattr x="-536.000000"
+        <posattr x="-588.000000"
                  y="378.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -479,20 +479,20 @@ else 4;</layout>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem recebida por V&apos;</text>
+        <text>Message received by V&apos;</text>
         <ellipse w="198.000000"
                  h="68.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
-        <marking x="37.000000"
-                 y="83.000000"
+        <marking x="1115.000000"
+                 y="130.000000"
                  hidden="false">
           <snap snap_id="0"
                 anchor.horizontal="1"
                 anchor.vertical="2"/>
         </marking>
         <type id="ID1412850721">
-          <posattr x="-431.000000"
+          <posattr x="-483.000000"
                    y="344.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -506,8 +506,8 @@ else 4;</layout>
                 version="4.0.1">IDxV_MSG</text>
         </type>
         <initmark id="ID1413941473">
-          <posattr x="-276.000000"
-                   y="425.000000"/>
+          <posattr x="-426.000000"
+                   y="440.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -523,7 +523,7 @@ else 4;</layout>
         </initmark>
         <port id="ID1412869239"
               type="In">
-          <posattr x="-608.000000"
+          <posattr x="-660.000000"
                    y="351.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -536,8 +536,8 @@ else 4;</layout>
         </port>
       </place>
       <place id="ID1412853716">
-        <posattr x="-294.000000"
-                 y="252.000000"/>
+        <posattr x="-462.000000"
+                 y="294.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -546,7 +546,7 @@ else 4;</layout>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V em cobertura</text>
+        <text>V in-coverage</text>
         <ellipse w="118.000000"
                  h="60.000000"/>
         <token x="-10.000000"
@@ -559,8 +559,8 @@ else 4;</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412853717">
-          <posattr x="-227.500000"
-                   y="220.000000"/>
+          <posattr x="-440.500000"
+                   y="253.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -573,8 +573,8 @@ else 4;</layout>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412853718">
-          <posattr x="-217.000000"
-                   y="283.000000"/>
+          <posattr x="-385.000000"
+                   y="325.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -588,8 +588,8 @@ else 4;</layout>
         </initmark>
       </place>
       <place id="ID1412855069">
-        <posattr x="-294.000000"
-                 y="67.000000"/>
+        <posattr x="-447.000000"
+                 y="168.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -598,8 +598,8 @@ else 4;</layout>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>V fora de cobertura</text>
-        <ellipse w="148.000000"
+        <text>V out-of-coverage</text>
+        <ellipse w="124.000000"
                  h="60.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -611,8 +611,8 @@ else 4;</layout>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412855070">
-          <posattr x="-216.500000"
-                   y="35.000000"/>
+          <posattr x="-425.500000"
+                   y="127.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -625,8 +625,8 @@ else 4;</layout>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412855071">
-          <posattr x="-206.000000"
-                   y="98.000000"/>
+          <posattr x="-368.000000"
+                   y="199.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -640,8 +640,8 @@ else 4;</layout>
         </initmark>
       </place>
       <place id="ID1412934750">
-        <posattr x="-536.000000"
-                 y="-168.000000"/>
+        <posattr x="-588.000000"
+                 y="32.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -650,8 +650,8 @@ else 4;</layout>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem verificada e 
-aguardando cobertura</text>
+        <text>Message verified and 
+awaiting coverage</text>
         <ellipse w="182.000000"
                  h="76.000000"/>
         <token x="-10.000000"
@@ -664,8 +664,8 @@ aguardando cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412934751">
-          <posattr x="-446.500000"
-                   y="-204.000000"/>
+          <posattr x="-529.500000"
+                   y="-12.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -678,8 +678,8 @@ aguardando cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412934752">
-          <posattr x="-436.000000"
-                   y="-131.000000"/>
+          <posattr x="-488.000000"
+                   y="68.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -693,8 +693,8 @@ aguardando cobertura</text>
         </initmark>
       </place>
       <place id="ID1412954535">
-        <posattr x="313.000000"
-                 y="67.000000"/>
+        <posattr x="-74.000000"
+                 y="168.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -703,9 +703,9 @@ aguardando cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem autenticada 
-fora de cobertura</text>
-        <ellipse w="172.000000"
+        <text>Message authenticated
+out-of-coverage</text>
+        <ellipse w="158.000000"
                  h="60.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -717,8 +717,8 @@ fora de cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412954536">
-          <posattr x="397.500000"
-                   y="35.000000"/>
+          <posattr x="-52.500000"
+                   y="127.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -731,8 +731,8 @@ fora de cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412954537">
-          <posattr x="408.000000"
-                   y="98.000000"/>
+          <posattr x="17.000000"
+                   y="199.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -746,8 +746,8 @@ fora de cobertura</text>
         </initmark>
       </place>
       <place id="ID1412965178">
-        <posattr x="42.000000"
-                 y="-210.000000"/>
+        <posattr x="-267.000000"
+                 y="66.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -756,9 +756,9 @@ fora de cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem rejeitada</text>
+        <text>Message rejected</text>
         <ellipse w="168.000000"
-                 h="58.000000"/>
+                 h="46.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="0.000000"
@@ -769,8 +769,8 @@ fora de cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412965179">
-          <posattr x="125.500000"
-                   y="-240.000000"/>
+          <posattr x="-182.500000"
+                   y="39.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -783,8 +783,8 @@ fora de cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412965180">
-          <posattr x="136.000000"
-                   y="-179.000000"/>
+          <posattr x="-172.000000"
+                   y="92.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -798,8 +798,8 @@ fora de cobertura</text>
         </initmark>
         <port id="ID1412968561"
               type="Out">
-          <posattr x="-20.000000"
-                   y="-233.000000"/>
+          <posattr x="-329.000000"
+                   y="46.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -811,8 +811,8 @@ fora de cobertura</text>
         </port>
       </place>
       <place id="ID1413003424">
-        <posattr x="305.000000"
-                 y="294.000000"/>
+        <posattr x="-65.000000"
+                 y="282.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -821,8 +821,8 @@ fora de cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem autenticada 
-em cobertura</text>
+        <text>Message authenticated
+in-coverage</text>
         <ellipse w="172.000000"
                  h="66.000000"/>
         <token x="-10.000000"
@@ -835,8 +835,8 @@ em cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413003425">
-          <posattr x="389.500000"
-                   y="260.000000"/>
+          <posattr x="20.500000"
+                   y="248.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -849,8 +849,8 @@ em cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1413003426">
-          <posattr x="400.000000"
-                   y="327.000000"/>
+          <posattr x="31.000000"
+                   y="315.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -864,8 +864,8 @@ em cobertura</text>
         </initmark>
       </place>
       <place id="ID1413010703">
-        <posattr x="783.000000"
-                 y="294.000000"/>
+        <posattr x="42.000000"
+                 y="402.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -874,9 +874,9 @@ em cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem recebida 
-pelo servidor ADAS</text>
-        <ellipse w="156.000000"
+        <text>Message received by
+ADAS server</text>
+        <ellipse w="152.000000"
                  h="82.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -888,8 +888,8 @@ pelo servidor ADAS</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413010704">
-          <posattr x="853.500000"
-                   y="255.000000"/>
+          <posattr x="111.500000"
+                   y="363.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -902,8 +902,8 @@ pelo servidor ADAS</text>
                 version="4.0.1">MSG</text>
         </type>
         <initmark id="ID1413010705">
-          <posattr x="872.000000"
-                   y="332.000000"/>
+          <posattr x="130.000000"
+                   y="440.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -917,8 +917,8 @@ pelo servidor ADAS</text>
         </initmark>
         <port id="ID1413012896"
               type="Out">
-          <posattr x="725.000000"
-                   y="262.000000"/>
+          <posattr x="-14.000000"
+                   y="370.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -930,7 +930,7 @@ pelo servidor ADAS</text>
         </port>
       </place>
       <place id="ID1413826335">
-        <posattr x="-738.000000"
+        <posattr x="-692.000000"
                  y="168.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -940,9 +940,9 @@ pelo servidor ADAS</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Proxima
-mensagem</text>
-        <ellipse w="96.000000"
+        <text>Next 
+message</text>
+        <ellipse w="60.000000"
                  h="48.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -954,7 +954,7 @@ mensagem</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413826336">
-          <posattr x="-694.000000"
+          <posattr x="-660.000000"
                    y="141.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -968,7 +968,7 @@ mensagem</text>
                 version="4.0.1">ID</text>
         </type>
         <initmark id="ID1413948552">
-          <posattr x="-689.000000"
+          <posattr x="-655.000000"
                    y="194.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -984,8 +984,8 @@ mensagem</text>
       </place>
       <trans id="ID1412869614"
              explicit="false">
-        <posattr x="-536.000000"
-                 y="168.000000"/>
+        <posattr x="-588.000000"
+                 y="227.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -994,15 +994,15 @@ mensagem</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Comportamentos de V</text>
-        <box w="194.000000"
-             h="234.000000"/>
+        <text>V Behaviors</text>
+        <box w="92.000000"
+             h="68.000000"/>
         <subst subpage="ID1412869626"
                portsock="(ID1412869634,ID1412853716)(ID1412869639,ID1412855069)(ID1412907452,ID1412934750)(ID1412869644,ID1412850720)(ID1413752137,ID1413826335)">
           <subpageinfo id="ID1412869664"
-                       name="Comportamentos de V">
-            <posattr x="-564.000000"
-                     y="47.000000"/>
+                       name="V Behaviors">
+            <posattr x="-592.000000"
+                     y="200.000000"/>
             <fillattr colour="White"
                       pattern="Solid"
                       filled="false"/>
@@ -1016,8 +1016,8 @@ mensagem</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1412869615">
-          <posattr x="-642.000000"
-                   y="296.000000"/>
+          <posattr x="-643.000000"
+                   y="272.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1030,8 +1030,8 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1412869616">
-          <posattr x="-424.500000"
-                   y="296.000000"/>
+          <posattr x="-527.500000"
+                   y="272.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1044,8 +1044,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1412869617">
-          <posattr x="-404.500000"
-                   y="19.000000"/>
+          <posattr x="-507.500000"
+                   y="161.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1058,8 +1058,8 @@ mensagem</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1412869619">
-          <posattr x="-671.000000"
-                   y="40.000000"/>
+          <posattr x="-672.000000"
+                   y="182.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1074,8 +1074,8 @@ mensagem</text>
       </trans>
       <trans id="ID1412977227"
              explicit="false">
-        <posattr x="0.000000"
-                 y="67.000000"/>
+        <posattr x="-267.000000"
+                 y="168.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1084,15 +1084,16 @@ mensagem</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Autenticacao fora de cobertura</text>
-        <box w="214.000000"
-             h="180.000000"/>
+        <text>Out-of-Coverage 
+Authentication</text>
+        <box w="122.000000"
+             h="68.000000"/>
         <subst subpage="ID1412977239"
                portsock="(ID1412977247,ID1412965178)(ID1412977253,ID1412954535)(ID1412977258,ID1412855069)">
           <subpageinfo id="ID1412977277"
-                       name="Autenticacao fora de cobertura">
-            <posattr x="-11.000000"
-                     y="-27.000000"/>
+                       name="Out-of-Coverage Authentication">
+            <posattr x="-267.000000"
+                     y="130.000000"/>
             <fillattr colour="White"
                       pattern="Solid"
                       filled="false"/>
@@ -1106,8 +1107,8 @@ mensagem</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1412977228">
-          <posattr x="-116.000000"
-                   y="168.000000"/>
+          <posattr x="-337.000000"
+                   y="213.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1120,8 +1121,8 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1412977229">
-          <posattr x="121.500000"
-                   y="168.000000"/>
+          <posattr x="-191.500000"
+                   y="213.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1134,8 +1135,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1412977230">
-          <posattr x="141.500000"
-                   y="-55.000000"/>
+          <posattr x="-171.500000"
+                   y="102.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1148,8 +1149,8 @@ mensagem</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1412977232">
-          <posattr x="-145.000000"
-                   y="-34.000000"/>
+          <posattr x="-366.000000"
+                   y="123.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1164,8 +1165,8 @@ mensagem</text>
       </trans>
       <trans id="ID1412994287"
              explicit="false">
-        <posattr x="656.000000"
-                 y="67.000000"/>
+        <posattr x="100.000000"
+                 y="168.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1174,15 +1175,16 @@ mensagem</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Proof of Reputation</text>
-        <box w="222.000000"
-             h="180.000000"/>
+        <text>Proof of 
+Reputation</text>
+        <box w="78.000000"
+             h="84.000000"/>
         <subst subpage="ID1412994299"
                portsock="(ID1412994307,ID1412954535)(ID1412994312,ID1412965178)(ID1412994318,ID1412934750)">
           <subpageinfo id="ID1412994337"
                        name="Proof of Reputation">
-            <posattr x="604.500000"
-                     y="-27.000000"/>
+            <posattr x="78.000000"
+                     y="124.000000"/>
             <fillattr colour="White"
                       pattern="Solid"
                       filled="false"/>
@@ -1196,8 +1198,8 @@ mensagem</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1412994288">
-          <posattr x="536.000000"
-                   y="168.000000"/>
+          <posattr x="52.000000"
+                   y="221.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1210,8 +1212,8 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1412994289">
-          <posattr x="781.500000"
-                   y="168.000000"/>
+          <posattr x="153.500000"
+                   y="221.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1224,8 +1226,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1412994290">
-          <posattr x="801.500000"
-                   y="-55.000000"/>
+          <posattr x="173.500000"
+                   y="94.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1238,8 +1240,8 @@ mensagem</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1412994292">
-          <posattr x="507.000000"
-                   y="-34.000000"/>
+          <posattr x="23.000000"
+                   y="115.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1254,8 +1256,8 @@ mensagem</text>
       </trans>
       <trans id="ID1413022994"
              explicit="false">
-        <posattr x="546.000000"
-                 y="294.000000"/>
+        <posattr x="106.000000"
+                 y="282.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1265,14 +1267,14 @@ mensagem</text>
         <textattr colour="Black"
                   bold="false"/>
         <text>RAN</text>
-        <box w="148.000000"
-             h="72.000000"/>
+        <box w="58.000000"
+             h="90.000000"/>
         <subst subpage="ID1413023004"
                portsock="(ID1413023012,ID1413003424)(ID1413023017,ID1413010703)">
           <subpageinfo id="ID1413023035"
                        name="RAN">
-            <posattr x="483.000000"
-                     y="254.000000"/>
+            <posattr x="91.000000"
+                     y="230.000000"/>
             <fillattr colour="White"
                       pattern="Solid"
                       filled="false"/>
@@ -1286,8 +1288,8 @@ mensagem</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413022995">
-          <posattr x="463.000000"
-                   y="341.000000"/>
+          <posattr x="68.000000"
+                   y="338.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1300,8 +1302,8 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413022996">
-          <posattr x="634.500000"
-                   y="341.000000"/>
+          <posattr x="149.500000"
+                   y="338.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1314,8 +1316,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413022997">
-          <posattr x="654.500000"
-                   y="226.000000"/>
+          <posattr x="169.500000"
+                   y="205.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1328,8 +1330,8 @@ mensagem</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1413022999">
-          <posattr x="434.000000"
-                   y="247.000000"/>
+          <posattr x="39.000000"
+                   y="226.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1344,8 +1346,8 @@ mensagem</text>
       </trans>
       <trans id="ID1413027259"
              explicit="false">
-        <posattr x="0.000000"
-                 y="318.000000"/>
+        <posattr x="-266.000000"
+                 y="294.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1354,15 +1356,16 @@ mensagem</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Autenticacao em cobertura</text>
-        <box w="214.000000"
-             h="184.000000"/>
+        <text>In-Coverage 
+Authentication</text>
+        <box w="118.000000"
+             h="68.000000"/>
         <subst subpage="ID1413027271"
                portsock="(ID1413027279,ID1412853716)(ID1413027284,ID1412965178)(ID1413027290,ID1413003424)">
           <subpageinfo id="ID1413027309"
-                       name="Autenticacao em cobertura">
-            <posattr x="-24.000000"
-                     y="222.000000"/>
+                       name="In-Coverage Authentication">
+            <posattr x="-268.000000"
+                     y="268.000000"/>
             <fillattr colour="White"
                       pattern="Solid"
                       filled="false"/>
@@ -1376,8 +1379,8 @@ mensagem</text>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413027260">
-          <posattr x="-116.000000"
-                   y="421.000000"/>
+          <posattr x="-334.000000"
+                   y="339.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1390,8 +1393,8 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413027261">
-          <posattr x="121.500000"
-                   y="421.000000"/>
+          <posattr x="-192.500000"
+                   y="339.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1404,8 +1407,8 @@ mensagem</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413027262">
-          <posattr x="141.500000"
-                   y="194.000000"/>
+          <posattr x="-172.500000"
+                   y="228.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1418,8 +1421,8 @@ mensagem</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1413027264">
-          <posattr x="-145.000000"
-                   y="215.000000"/>
+          <posattr x="-363.000000"
+                   y="249.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1434,8 +1437,8 @@ mensagem</text>
       </trans>
       <trans id="ID1413808504"
              explicit="false">
-        <posattr x="-234.000000"
-                 y="-210.000000"/>
+        <posattr x="-269.000000"
+                 y="-11.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1444,16 +1447,16 @@ mensagem</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Habilita nova
-mensagem por
-rejeicao</text>
+        <text>Enable new 
+message by
+rejection</text>
         <box w="124.000000"
              h="52.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413808505">
-          <posattr x="-305.000000"
-                   y="-173.000000"/>
+          <posattr x="-340.000000"
+                   y="26.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1466,8 +1469,8 @@ rejeicao</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413808506">
-          <posattr x="-157.500000"
-                   y="-173.000000"/>
+          <posattr x="-192.500000"
+                   y="26.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1480,8 +1483,8 @@ rejeicao</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413808507">
-          <posattr x="-226.000000"
-                   y="-143.000000"/>
+          <posattr x="-403.500000"
+                   y="5.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1497,8 +1500,8 @@ action
 (nextMsg(#1 v_msg));</text>
         </code>
         <priority id="ID1413808509">
-          <posattr x="-334.000000"
-                   y="-247.000000"/>
+          <posattr x="-369.000000"
+                   y="-48.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1513,8 +1516,8 @@ action
       </trans>
       <trans id="ID1413899177"
              explicit="false">
-        <posattr x="146.000000"
-                 y="504.000000"/>
+        <posattr x="62.000000"
+                 y="486.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -1523,16 +1526,15 @@ action
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Habilita nova
-mensagem por
-aprovacao</text>
-        <box w="120.000000"
-             h="48.000000"/>
+        <text>Enable new message 
+byapproval</text>
+        <box w="144.000000"
+             h="28.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413899178">
-          <posattr x="77.000000"
-                   y="539.000000"/>
+          <posattr x="-19.000000"
+                   y="511.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1545,8 +1547,8 @@ aprovacao</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413899179">
-          <posattr x="220.500000"
-                   y="539.000000"/>
+          <posattr x="148.500000"
+                   y="511.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1559,8 +1561,8 @@ aprovacao</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413899180">
-          <posattr x="297.000000"
-                   y="470.000000"/>
+          <posattr x="-78.000000"
+                   y="451.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1573,11 +1575,12 @@ aprovacao</text>
                 version="4.0.1">input (msg);
 output (id);
 action
-(nextMsg(findId(msg)));</text>
+(nextMsg
+(findId(msg)));</text>
         </code>
         <priority id="ID1413899182">
-          <posattr x="48.000000"
-                   y="469.000000"/>
+          <posattr x="-48.000000"
+                   y="461.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1608,8 +1611,8 @@ action
         <transend idref="ID1412869614"/>
         <placeend idref="ID1412853716"/>
         <annot id="ID1412869621">
-          <posattr x="-399.500000"
-                   y="233.000000"/>
+          <posattr x="-530.500000"
+                   y="280.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1640,8 +1643,8 @@ action
         <transend idref="ID1412869614"/>
         <placeend idref="ID1412855069"/>
         <annot id="ID1412869623">
-          <posattr x="-382.500000"
-                   y="124.000000"/>
+          <posattr x="-509.500000"
+                   y="214.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1672,8 +1675,8 @@ action
         <transend idref="ID1412869614"/>
         <placeend idref="ID1412934750"/>
         <annot id="ID1412939140">
-          <posattr x="-511.500000"
-                   y="-40.000000"/>
+          <posattr x="-563.500000"
+                   y="132.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1703,10 +1706,10 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1412977227"/>
         <placeend idref="ID1412965178"/>
-        <bendpoint id="ID1412987542"
+        <bendpoint id="ID1590659947"
                    serial="1">
-          <posattr x="42.000000"
-                   y="-168.000000"/>
+          <posattr x="-267.000000"
+                   y="94.660000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1717,8 +1720,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1412977234">
-          <posattr x="17.500000"
-                   y="-119.000000"/>
+          <posattr x="-242.500000"
+                   y="108.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1749,8 +1752,8 @@ action
         <transend idref="ID1412977227"/>
         <placeend idref="ID1412954535"/>
         <annot id="ID1412977236">
-          <posattr x="167.000000"
-                   y="78.000000"/>
+          <posattr x="-180.000000"
+                   y="179.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1781,8 +1784,8 @@ action
         <transend idref="ID1412977227"/>
         <placeend idref="ID1412855069"/>
         <annot id="ID1412977238">
-          <posattr x="-160.000000"
-                   y="78.000000"/>
+          <posattr x="-360.000000"
+                   y="179.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1813,8 +1816,8 @@ action
         <transend idref="ID1412994287"/>
         <placeend idref="ID1412954535"/>
         <annot id="ID1412994294">
-          <posattr x="472.000000"
-                   y="78.000000"/>
+          <posattr x="34.000000"
+                   y="179.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1846,8 +1849,8 @@ action
         <placeend idref="ID1412965178"/>
         <bendpoint id="ID1412994664"
                    serial="1">
-          <posattr x="756.000000"
-                   y="-210.000000"/>
+          <posattr x="126.000000"
+                   y="52.660000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1858,8 +1861,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1412994296">
-          <posattr x="441.000000"
-                   y="-199.000000"/>
+          <posattr x="-44.000000"
+                   y="42.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1891,8 +1894,8 @@ action
         <placeend idref="ID1412934750"/>
         <bendpoint id="ID1412994964"
                    serial="1">
-          <posattr x="588.000000"
-                   y="-269.000000"/>
+          <posattr x="100.000000"
+                   y="-42.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1904,8 +1907,8 @@ action
         </bendpoint>
         <bendpoint id="ID1412995879"
                    serial="2">
-          <posattr x="-536.000000"
-                   y="-269.000000"/>
+          <posattr x="-588.000000"
+                   y="-42.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1916,8 +1919,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1412994298">
-          <posattr x="-80.000000"
-                   y="-258.000000"/>
+          <posattr x="21.000000"
+                   y="-31.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1948,8 +1951,8 @@ action
         <transend idref="ID1413022994"/>
         <placeend idref="ID1413003424"/>
         <annot id="ID1413023001">
-          <posattr x="427.000000"
-                   y="305.000000"/>
+          <posattr x="46.000000"
+                   y="293.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -1979,9 +1982,35 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413022994"/>
         <placeend idref="ID1413010703"/>
+        <bendpoint id="ID1506777693"
+                   serial="1">
+          <posattr x="106.000000"
+                   y="336.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <bendpoint id="ID1506778086"
+                   serial="2">
+          <posattr x="42.000000"
+                   y="336.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
         <annot id="ID1413023003">
-          <posattr x="663.000000"
-                   y="305.000000"/>
+          <posattr x="65.000000"
+                   y="341.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2011,9 +2040,22 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413027259"/>
         <placeend idref="ID1412853716"/>
-        <bendpoint id="ID1506745737"
+        <bendpoint id="ID1506761227"
                    serial="1">
-          <posattr x="-186.410000"
+          <posattr x="-356.000000"
+                   y="294.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <bendpoint id="ID1506752504"
+                   serial="2">
+          <posattr x="-336.000000"
                    y="294.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2025,7 +2067,7 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413027266">
-          <posattr x="-151.000000"
+          <posattr x="-369.000000"
                    y="305.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2056,10 +2098,10 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413027259"/>
         <placeend idref="ID1412965178"/>
-        <bendpoint id="ID1413027874"
+        <bendpoint id="ID1590662107"
                    serial="1">
-          <posattr x="98.000000"
-                   y="434.000000"/>
+          <posattr x="-168.000000"
+                   y="350.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2071,8 +2113,8 @@ action
         </bendpoint>
         <bendpoint id="ID1413028411"
                    serial="2">
-          <posattr x="882.000000"
-                   y="434.000000"/>
+          <posattr x="150.000000"
+                   y="350.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2084,21 +2126,8 @@ action
         </bendpoint>
         <bendpoint id="ID1413028951"
                    serial="3">
-          <posattr x="882.000000"
-                   y="-294.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <bendpoint id="ID1413030587"
-                   serial="4">
-          <posattr x="42.000000"
-                   y="-294.000000"/>
+          <posattr x="150.000000"
+                   y="66.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2109,8 +2138,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413027268">
-          <posattr x="460.000000"
-                   y="-283.000000"/>
+          <posattr x="-116.000000"
+                   y="77.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2140,10 +2169,10 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413027259"/>
         <placeend idref="ID1413003424"/>
-        <bendpoint id="ID1506746150"
+        <bendpoint id="ID1506753863"
                    serial="1">
-          <posattr x="154.000000"
-                   y="294.000000"/>
+          <posattr x="-168.000000"
+                   y="282.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2154,8 +2183,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413027270">
-          <posattr x="138.000000"
-                   y="305.000000"/>
+          <posattr x="-180.000000"
+                   y="293.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2186,8 +2215,8 @@ action
         <transend idref="ID1412869614"/>
         <placeend idref="ID1412850720"/>
         <annot id="ID1413580797">
-          <posattr x="-578.500000"
-                   y="315.000000"/>
+          <posattr x="-630.500000"
+                   y="303.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2249,9 +2278,22 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413808504"/>
         <placeend idref="ID1412965178"/>
+        <bendpoint id="ID1590659161"
+                   serial="1">
+          <posattr x="-252.000000"
+                   y="42.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
         <annot id="ID1413853326">
-          <posattr x="-107.000000"
-                   y="-199.000000"/>
+          <posattr x="-227.500000"
+                   y="31.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2281,23 +2323,10 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413808504"/>
         <placeend idref="ID1413826335"/>
-        <bendpoint id="ID1413854556"
-                   serial="1">
-          <posattr x="-234.000000"
-                   y="-294.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
         <bendpoint id="ID1413854557"
-                   serial="2">
-          <posattr x="-738.000000"
-                   y="-294.000000"/>
+                   serial="1">
+          <posattr x="-692.000000"
+                   y="-28.340000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2308,8 +2337,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413854555">
-          <posattr x="-728.500000"
-                   y="-203.000000"/>
+          <posattr x="-682.500000"
+                   y="8.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2341,8 +2370,8 @@ action
         <placeend idref="ID1413010703"/>
         <bendpoint id="ID1413905805"
                    serial="1">
-          <posattr x="798.000000"
-                   y="504.000000"/>
+          <posattr x="84.000000"
+                   y="443.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2353,8 +2382,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413905804">
-          <posattr x="502.000000"
-                   y="515.000000"/>
+          <posattr x="101.000000"
+                   y="448.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2386,8 +2415,8 @@ action
         <placeend idref="ID1413826335"/>
         <bendpoint id="ID1413915197"
                    serial="1">
-          <posattr x="-738.000000"
-                   y="504.000000"/>
+          <posattr x="-692.000000"
+                   y="486.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2398,8 +2427,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413915196">
-          <posattr x="-326.000000"
-                   y="515.000000"/>
+          <posattr x="-351.000000"
+                   y="497.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -2415,7 +2444,7 @@ action
       <constraints/>
     </page>
     <page id="ID1412869626">
-      <pageattr name="Comportamentos de V"/>
+      <pageattr name="V Behaviors"/>
       <place id="ID1412869634">
         <posattr x="-356.000000"
                  y="294.000000"/>
@@ -3209,7 +3238,7 @@ mensagem</text>
       <constraints/>
     </page>
     <page id="ID1412977239">
-      <pageattr name="Autenticacao fora de cobertura"/>
+      <pageattr name="Out-of-Coverage Authentication"/>
       <place id="ID1412977247">
         <posattr x="-155.000000"
                  y="-210.000000"/>
@@ -3849,8 +3878,8 @@ action
     <page id="ID1412994299">
       <pageattr name="Proof of Reputation"/>
       <place id="ID1412994307">
-        <posattr x="-523.000000"
-                 y="347.000000"/>
+        <posattr x="-703.000000"
+                 y="231.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -3859,10 +3888,12 @@ action
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem autenticada 
-fora de cobertura</text>
-        <ellipse w="172.000000"
-                 h="60.000000"/>
+        <text>Message 
+authenticated
+out of 
+coverage</text>
+        <ellipse w="106.000000"
+                 h="80.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="0.000000"
@@ -3873,8 +3904,8 @@ fora de cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412994308">
-          <posattr x="-437.500000"
-                   y="315.000000"/>
+          <posattr x="-640.500000"
+                   y="192.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3887,8 +3918,8 @@ fora de cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412994309">
-          <posattr x="-427.000000"
-                   y="378.000000"/>
+          <posattr x="-630.000000"
+                   y="269.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3902,8 +3933,8 @@ fora de cobertura</text>
         </initmark>
         <port id="ID1412994359"
               type="In">
-          <posattr x="-586.000000"
-                   y="322.000000"/>
+          <posattr x="-743.000000"
+                   y="199.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3915,7 +3946,7 @@ fora de cobertura</text>
         </port>
       </place>
       <place id="ID1412994312">
-        <posattr x="-13.000000"
+        <posattr x="-57.000000"
                  y="-168.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -3925,8 +3956,8 @@ fora de cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem 
-rejeitada</text>
+        <text>Message 
+rejected</text>
         <ellipse w="92.000000"
                  h="58.000000"/>
         <token x="-10.000000"
@@ -3939,8 +3970,8 @@ rejeitada</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412994313">
-          <posattr x="43.500000"
-                   y="-198.000000"/>
+          <posattr x="-9.500000"
+                   y="-196.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -3953,7 +3984,7 @@ rejeitada</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412994314">
-          <posattr x="54.000000"
+          <posattr x="11.000000"
                    y="-137.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3968,7 +3999,7 @@ rejeitada</text>
         </initmark>
         <port id="ID1412994315"
               type="Out">
-          <posattr x="-48.000000"
+          <posattr x="-92.000000"
                    y="-191.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -3981,7 +4012,7 @@ rejeitada</text>
         </port>
       </place>
       <place id="ID1412994318">
-        <posattr x="-42.000000"
+        <posattr x="-84.000000"
                  y="-42.000000"/>
         <fillattr colour="White"
                   pattern=""
@@ -3991,9 +4022,9 @@ rejeitada</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem verificada e 
-aguardando cobertura</text>
-        <ellipse w="180.000000"
+        <text>Message verified and
+awaiting coverage</text>
+        <ellipse w="158.000000"
                  h="76.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
@@ -4005,7 +4036,7 @@ aguardando cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1412994319">
-          <posattr x="45.500000"
+          <posattr x="-14.500000"
                    y="-78.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4019,7 +4050,7 @@ aguardando cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1412994320">
-          <posattr x="56.000000"
+          <posattr x="7.000000"
                    y="-5.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4034,7 +4065,7 @@ aguardando cobertura</text>
         </initmark>
         <port id="ID1412994364"
               type="Out">
-          <posattr x="-108.000000"
+          <posattr x="-142.000000"
                    y="-71.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4047,8 +4078,8 @@ aguardando cobertura</text>
         </port>
       </place>
       <place id="ID1413047064">
-        <posattr x="-233.000000"
-                 y="224.000000"/>
+        <posattr x="-252.000000"
+                 y="231.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4057,9 +4088,9 @@ aguardando cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Mensagem a ter V&apos; verificado</text>
+        <text>Message to have V&apos; verified</text>
         <ellipse w="190.000000"
-                 h="62.000000"/>
+                 h="42.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="0.000000"
@@ -4070,8 +4101,8 @@ aguardando cobertura</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413050067">
-          <posattr x="-140.500000"
-                   y="192.000000"/>
+          <posattr x="-159.500000"
+                   y="206.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4084,7 +4115,7 @@ aguardando cobertura</text>
                 version="4.0.1">V_MSG</text>
         </type>
         <initmark id="ID1413047066">
-          <posattr x="-130.000000"
+          <posattr x="-149.000000"
                    y="255.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4100,7 +4131,7 @@ aguardando cobertura</text>
       </place>
       <place id="ID1413076155">
         <posattr x="-523.000000"
-                 y="72.000000"/>
+                 y="157.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4109,10 +4140,10 @@ aguardando cobertura</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Veiculos vizinhos para 
+        <text>Neighboring vehicles for
 Multi-Party Computation</text>
         <ellipse w="220.000000"
-                 h="60.000000"/>
+                 h="42.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="18.000000"
@@ -4124,7 +4155,7 @@ Multi-Party Computation</text>
         </marking>
         <type id="ID1413076156">
           <posattr x="-400.500000"
-                   y="40.000000"/>
+                   y="132.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4138,7 +4169,7 @@ Multi-Party Computation</text>
         </type>
         <initmark id="ID1413295121">
           <posattr x="-410.000000"
-                   y="103.000000"/>
+                   y="181.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4153,7 +4184,7 @@ Multi-Party Computation</text>
       </place>
       <place id="ID1413084701">
         <posattr x="-367.000000"
-                 y="-283.000000"/>
+                 y="-42.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4162,10 +4193,10 @@ Multi-Party Computation</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Vx possivel 
-candidato</text>
+        <text>Vx possible
+candidate</text>
         <ellipse w="96.000000"
-                 h="64.000000"/>
+                 h="44.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="0.000000"
@@ -4177,7 +4208,7 @@ candidato</text>
         </marking>
         <type id="ID1413084702">
           <posattr x="-306.000000"
-                   y="-315.000000"/>
+                   y="-67.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4191,7 +4222,7 @@ candidato</text>
         </type>
         <initmark id="ID1413084703">
           <posattr x="-298.000000"
-                   y="-250.000000"/>
+                   y="-16.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4206,7 +4237,7 @@ candidato</text>
       </place>
       <place id="ID1413089967">
         <posattr x="-714.000000"
-                 y="-236.000000"/>
+                 y="0.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4215,7 +4246,7 @@ candidato</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Vx rejeitado</text>
+        <text>Vx rejected</text>
         <ellipse w="90.000000"
                  h="64.000000"/>
         <token x="-10.000000"
@@ -4228,8 +4259,8 @@ candidato</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413089968">
-          <posattr x="-637.500000"
-                   y="-268.000000"/>
+          <posattr x="-631.500000"
+                   y="-42.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4243,7 +4274,7 @@ candidato</text>
         </type>
         <initmark id="ID1413089969">
           <posattr x="-666.000000"
-                   y="-203.000000"/>
+                   y="32.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4258,7 +4289,7 @@ candidato</text>
       </place>
       <place id="ID1413103577">
         <posattr x="-367.000000"
-                 y="-605.000000"/>
+                 y="-210.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4267,9 +4298,9 @@ candidato</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Vx escolhidos</text>
+        <text>Vx chosen</text>
         <ellipse w="102.000000"
-                 h="56.000000"/>
+                 h="30.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="-54.000000"
@@ -4281,7 +4312,7 @@ candidato</text>
         </marking>
         <type id="ID1413103578">
           <posattr x="-304.000000"
-                   y="-634.000000"/>
+                   y="-230.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4295,7 +4326,7 @@ candidato</text>
         </type>
         <initmark id="ID1413103579">
           <posattr x="-296.000000"
-                   y="-575.000000"/>
+                   y="-189.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4310,7 +4341,7 @@ candidato</text>
       </place>
       <place id="ID1413121025">
         <posattr x="-336.000000"
-                 y="-840.000000"/>
+                 y="-325.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4319,8 +4350,8 @@ candidato</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Fpor calculado 
-por Vx recebido</text>
+        <text>Fpor calculated 
+by Vx received</text>
         <ellipse w="120.000000"
                  h="56.000000"/>
         <token x="-10.000000"
@@ -4334,7 +4365,7 @@ por Vx recebido</text>
         </marking>
         <type id="ID1413121026">
           <posattr x="-269.500000"
-                   y="-869.000000"/>
+                   y="-354.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4348,7 +4379,7 @@ por Vx recebido</text>
         </type>
         <initmark id="ID1413121027">
           <posattr x="-277.000000"
-                   y="-810.000000"/>
+                   y="-295.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4362,8 +4393,8 @@ por Vx recebido</text>
         </initmark>
       </place>
       <place id="ID1413197651">
-        <posattr x="-146.000000"
-                 y="-275.000000"/>
+        <posattr x="-252.000000"
+                 y="-168.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4372,9 +4403,9 @@ por Vx recebido</text>
                   type="Solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>IC de V&apos; calculado</text>
+        <text>CI of V&apos; calculated</text>
         <ellipse w="152.000000"
-                 h="60.000000"/>
+                 h="40.000000"/>
         <token x="-10.000000"
                y="0.000000"/>
         <marking x="0.000000"
@@ -4385,8 +4416,8 @@ por Vx recebido</text>
                 anchor.vertical="0"/>
         </marking>
         <type id="ID1413197652">
-          <posattr x="-82.000000"
-                   y="-306.000000"/>
+          <posattr x="-188.000000"
+                   y="-191.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4399,8 +4430,8 @@ por Vx recebido</text>
                 version="4.0.1">IC</text>
         </type>
         <initmark id="ID1413197653">
-          <posattr x="-57.000000"
-                   y="-243.000000"/>
+          <posattr x="-163.000000"
+                   y="-144.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4415,8 +4446,8 @@ por Vx recebido</text>
       </place>
       <trans id="ID1413045994"
              explicit="false">
-        <posattr x="-523.000000"
-                 y="224.000000"/>
+        <posattr x="-504.000000"
+                 y="231.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4425,14 +4456,14 @@ por Vx recebido</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Inicia o Proof of Reputation</text>
-        <box w="214.000000"
-             h="40.000000"/>
+        <text>Starts Proof of Reputation</text>
+        <box w="170.000000"
+             h="22.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413045995">
-          <posattr x="-639.000000"
-                   y="255.000000"/>
+          <posattr x="-598.000000"
+                   y="253.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4445,8 +4476,8 @@ por Vx recebido</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413045996">
-          <posattr x="-401.500000"
-                   y="255.000000"/>
+          <posattr x="-404.500000"
+                   y="253.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4459,8 +4490,8 @@ por Vx recebido</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413045997">
-          <posattr x="-381.500000"
-                   y="172.000000"/>
+          <posattr x="-384.500000"
+                   y="188.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4473,8 +4504,8 @@ por Vx recebido</text>
                 version="4.0.1"/>
         </code>
         <priority id="ID1413045999">
-          <posattr x="-668.000000"
-                   y="193.000000"/>
+          <posattr x="-627.000000"
+                   y="224.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4490,7 +4521,7 @@ por Vx recebido</text>
       <trans id="ID1413082225"
              explicit="false">
         <posattr x="-523.000000"
-                 y="-84.000000"/>
+                 y="74.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4499,14 +4530,14 @@ por Vx recebido</text>
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Calcula SW</text>
+        <text>Calculate SW</text>
         <box w="98.000000"
              h="40.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413082226">
           <posattr x="-581.000000"
-                   y="-53.000000"/>
+                   y="105.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4520,7 +4551,7 @@ por Vx recebido</text>
         </cond>
         <time id="ID1413082227">
           <posattr x="-459.500000"
-                   y="-53.000000"/>
+                   y="105.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4533,8 +4564,8 @@ por Vx recebido</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413082228">
-          <posattr x="-470.000000"
-                   y="-136.000000"/>
+          <posattr x="-397.500000"
+                   y="74.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4551,7 +4582,7 @@ action
         </code>
         <priority id="ID1413082230">
           <posattr x="-610.000000"
-                   y="-115.000000"/>
+                   y="43.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4567,7 +4598,7 @@ action
       <trans id="ID1413099429"
              explicit="false">
         <posattr x="-367.000000"
-                 y="-439.000000"/>
+                 y="-126.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4576,14 +4607,14 @@ action
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Verifica score de Vx</text>
-        <box w="156.000000"
-             h="36.000000"/>
+        <text>Check Vx score</text>
+        <box w="106.000000"
+             h="26.000000"/>
         <binding x="7.200000"
                  y="16.000000"/>
         <cond id="ID1413099430">
-          <posattr x="-454.000000"
-                   y="-410.000000"/>
+          <posattr x="-429.000000"
+                   y="-102.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4596,8 +4627,8 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413099431">
-          <posattr x="-274.500000"
-                   y="-410.000000"/>
+          <posattr x="-299.500000"
+                   y="-102.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4610,8 +4641,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1413099432">
-          <posattr x="-286.500000"
-                   y="-495.000000"/>
+          <posattr x="-438.500000"
+                   y="-81.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4627,8 +4658,8 @@ action
 (returnScore(v_data));</text>
         </code>
         <priority id="ID1413099434">
-          <posattr x="-483.000000"
-                   y="-468.000000"/>
+          <posattr x="-458.000000"
+                   y="-150.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4643,8 +4674,8 @@ action
       </trans>
       <trans id="ID1413115649"
              explicit="false">
-        <posattr x="-672.000000"
-                 y="-605.000000"/>
+        <posattr x="-630.000000"
+                 y="-210.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4653,14 +4684,14 @@ action
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Calcula Fpor de V&apos;</text>
+        <text>Calculate Fpor of V&apos;</text>
         <box w="148.000000"
-             h="40.000000"/>
+             h="28.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413115650">
-          <posattr x="-755.000000"
-                   y="-574.000000"/>
+          <posattr x="-713.000000"
+                   y="-185.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4673,8 +4704,8 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413115651">
-          <posattr x="-583.500000"
-                   y="-574.000000"/>
+          <posattr x="-541.500000"
+                   y="-185.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4687,8 +4718,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1413115652">
-          <posattr x="-518.000000"
-                   y="-657.000000"/>
+          <posattr x="-476.000000"
+                   y="-256.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4704,8 +4735,8 @@ action
 (calculateFpor(v_data));</text>
         </code>
         <priority id="ID1413115654">
-          <posattr x="-784.000000"
-                   y="-636.000000"/>
+          <posattr x="-742.000000"
+                   y="-235.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4720,8 +4751,8 @@ action
       </trans>
       <trans id="ID1413147652"
              explicit="false">
-        <posattr x="-73.000000"
-                 y="-611.000000"/>
+        <posattr x="-168.000000"
+                 y="-252.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4730,14 +4761,14 @@ action
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Calcula IC de V&apos;</text>
+        <text>Calculate CI of V&apos;</text>
         <box w="138.000000"
-             h="40.000000"/>
+             h="26.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413449779">
           <posattr x="-126.000000"
-                   y="-578.000000"/>
+                   y="-222.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4751,8 +4782,8 @@ action
 fpors &lt;&gt; []]</text>
         </cond>
         <time id="ID1413147654">
-          <posattr x="10.500000"
-                   y="-580.000000"/>
+          <posattr x="-84.500000"
+                   y="-228.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4765,8 +4796,8 @@ fpors &lt;&gt; []]</text>
                 version="4.0.1"/>
         </time>
         <code id="ID1413147655">
-          <posattr x="-140.000000"
-                   y="-676.000000"/>
+          <posattr x="-199.000000"
+                   y="-312.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4782,8 +4813,8 @@ action
 (calculateIC(fpors));</text>
         </code>
         <priority id="ID1413147657">
-          <posattr x="-180.000000"
-                   y="-642.000000"/>
+          <posattr x="-275.000000"
+                   y="-276.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4798,8 +4829,8 @@ action
       </trans>
       <trans id="ID1413192878"
              explicit="false">
-        <posattr x="-233.000000"
-                 y="-84.000000"/>
+        <posattr x="-252.000000"
+                 y="94.000000"/>
         <fillattr colour="White"
                   pattern=""
                   filled="false"/>
@@ -4808,14 +4839,14 @@ action
                   type="solid"/>
         <textattr colour="Black"
                   bold="false"/>
-        <text>Verifica se o IC foi valido</text>
+        <text>Check if CI was valid</text>
         <box w="170.000000"
-             h="34.000000"/>
+             h="22.000000"/>
         <binding x="7.200000"
                  y="-3.000000"/>
         <cond id="ID1413192879">
-          <posattr x="-327.000000"
-                   y="-56.000000"/>
+          <posattr x="-346.000000"
+                   y="116.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4828,8 +4859,8 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413192880">
-          <posattr x="-133.500000"
-                   y="-56.000000"/>
+          <posattr x="-152.500000"
+                   y="116.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4842,8 +4873,8 @@ action
                 version="4.0.1"/>
         </time>
         <code id="ID1413223669">
-          <posattr x="-113.500000"
-                   y="-133.000000"/>
+          <posattr x="-132.500000"
+                   y="51.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4856,8 +4887,8 @@ action
                 version="4.0.1"/>
         </code>
         <priority id="ID1413192883">
-          <posattr x="-356.000000"
-                   y="-112.000000"/>
+          <posattr x="-375.000000"
+                   y="87.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4888,8 +4919,8 @@ action
         <transend idref="ID1413045994"/>
         <placeend idref="ID1412994307"/>
         <annot id="ID1413046741">
-          <posattr x="-498.500000"
-                   y="280.000000"/>
+          <posattr x="-618.000000"
+                   y="242.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4920,8 +4951,8 @@ action
         <transend idref="ID1413045994"/>
         <placeend idref="ID1413047064"/>
         <annot id="ID1413051380">
-          <posattr x="-372.000000"
-                   y="235.000000"/>
+          <posattr x="-384.000000"
+                   y="242.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4951,9 +4982,22 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413045994"/>
         <placeend idref="ID1413076155"/>
+        <bendpoint id="ID1590677398"
+                   serial="1">
+          <posattr x="-504.000000"
+                   y="185.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
         <annot id="ID1413078918">
-          <posattr x="-463.500000"
-                   y="153.000000"/>
+          <posattr x="-444.500000"
+                   y="198.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4984,8 +5028,8 @@ action
         <transend idref="ID1413082225"/>
         <placeend idref="ID1413076155"/>
         <annot id="ID1413083709">
-          <posattr x="-625.000000"
-                   y="-14.000000"/>
+          <posattr x="-596.000000"
+                   y="113.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5015,10 +5059,10 @@ action
                    currentcyckle="2"/>
         <transend idref="ID1413082225"/>
         <placeend idref="ID1413084701"/>
-        <bendpoint id="ID1413091048"
+        <bendpoint id="ID1506795862"
                    serial="1">
-          <posattr x="-367.000000"
-                   y="-84.000000"/>
+          <posattr x="-504.000000"
+                   y="-42.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5029,8 +5073,8 @@ action
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413091047">
-          <posattr x="-407.000000"
-                   y="-59.000000"/>
+          <posattr x="-449.000000"
+                   y="6.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5062,10 +5106,10 @@ else empty</text>
                    currentcyckle="2"/>
         <transend idref="ID1413082225"/>
         <placeend idref="ID1413089967"/>
-        <bendpoint id="ID1413091597"
+        <bendpoint id="ID1506796607"
                    serial="1">
           <posattr x="-714.000000"
-                   y="-84.000000"/>
+                   y="74.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5076,8 +5120,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413091596">
-          <posattr x="-662.000000"
-                   y="-66.000000"/>
+          <posattr x="-668.000000"
+                   y="87.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5110,7 +5154,7 @@ else ins v_data_list&apos; v_data</text>
         <placeend idref="ID1413084701"/>
         <annot id="ID1413101200">
           <posattr x="-341.000000"
-                   y="-369.000000"/>
+                   y="-85.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5141,8 +5185,8 @@ else ins v_data_list&apos; v_data</text>
         <transend idref="ID1413099429"/>
         <placeend idref="ID1413103577"/>
         <annot id="ID1413106631">
-          <posattr x="-533.000000"
-                   y="-518.000000"/>
+          <posattr x="-516.000000"
+                   y="-175.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5175,7 +5219,7 @@ else ins v_data_list&apos; v_data</text>
         <bendpoint id="ID1413112398"
                    serial="1">
           <posattr x="-714.000000"
-                   y="-439.000000"/>
+                   y="-126.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5186,8 +5230,8 @@ else ins v_data_list&apos; v_data</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413112397">
-          <posattr x="-598.000000"
-                   y="-457.000000"/>
+          <posattr x="-618.000000"
+                   y="-101.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5197,7 +5241,8 @@ else ins v_data_list&apos; v_data</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if rep_score &gt; 3.5 then v_data_list&apos; 
+                version="4.0.1">if rep_score &gt; 3.5 
+then v_data_list&apos; 
 else ins v_data_list&apos; v_data</text>
         </annot>
       </arc>
@@ -5219,8 +5264,8 @@ else ins v_data_list&apos; v_data</text>
         <transend idref="ID1413115649"/>
         <placeend idref="ID1413103577"/>
         <annot id="ID1413118994">
-          <posattr x="-508.000000"
-                   y="-594.000000"/>
+          <posattr x="-487.000000"
+                   y="-199.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5252,8 +5297,8 @@ else ins v_data_list&apos; v_data</text>
         <placeend idref="ID1413121025"/>
         <bendpoint id="ID1413128007"
                    serial="1">
-          <posattr x="-653.522500"
-                   y="-840.000000"/>
+          <posattr x="-647.522500"
+                   y="-325.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5264,8 +5309,8 @@ else ins v_data_list&apos; v_data</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413128006">
-          <posattr x="-616.500000"
-                   y="-741.000000"/>
+          <posattr x="-610.500000"
+                   y="-279.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5296,8 +5341,8 @@ else ins v_data_list&apos; v_data</text>
         <transend idref="ID1413147652"/>
         <placeend idref="ID1413197651"/>
         <annot id="ID1413205443">
-          <posattr x="-98.500000"
-                   y="-446.000000"/>
+          <posattr x="-237.500000"
+                   y="-200.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5328,8 +5373,8 @@ else ins v_data_list&apos; v_data</text>
         <transend idref="ID1413192878"/>
         <placeend idref="ID1413047064"/>
         <annot id="ID1413209414">
-          <posattr x="-208.500000"
-                   y="64.000000"/>
+          <posattr x="-227.500000"
+                   y="158.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5360,8 +5405,8 @@ else ins v_data_list&apos; v_data</text>
         <transend idref="ID1413192878"/>
         <placeend idref="ID1413197651"/>
         <annot id="ID1413211424">
-          <posattr x="-182.500000"
-                   y="-169.000000"/>
+          <posattr x="-243.500000"
+                   y="-33.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5394,7 +5439,7 @@ else ins v_data_list&apos; v_data</text>
         <bendpoint id="ID1413248364"
                    serial="1">
           <posattr x="-210.000000"
-                   y="22.882500"/>
+                   y="22.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5406,8 +5451,8 @@ else ins v_data_list&apos; v_data</text>
         </bendpoint>
         <bendpoint id="ID1413237424"
                    serial="2">
-          <posattr x="-65.522500"
-                   y="22.882500"/>
+          <posattr x="-65.000000"
+                   y="22.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5419,7 +5464,7 @@ else ins v_data_list&apos; v_data</text>
         </bendpoint>
         <annot id="ID1413232076">
           <posattr x="-81.000000"
-                   y="41.000000"/>
+                   y="40.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5450,10 +5495,10 @@ else empty</text>
                    currentcyckle="2"/>
         <transend idref="ID1413192878"/>
         <placeend idref="ID1412994312"/>
-        <bendpoint id="ID1506722963"
+        <bendpoint id="ID1506794999"
                    serial="1">
-          <posattr x="-126.000000"
-                   y="-147.117500"/>
+          <posattr x="-199.000000"
+                   y="-147.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5464,7 +5509,7 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413243955">
-          <posattr x="-55.000000"
+          <posattr x="-101.000000"
                    y="-129.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -5498,7 +5543,7 @@ else empty</text>
         <placeend idref="ID1413076155"/>
         <annot id="ID1413365412">
           <posattr x="-477.000000"
-                   y="-11.000000"/>
+                   y="115.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5530,8 +5575,8 @@ else empty</text>
         <placeend idref="ID1413121025"/>
         <bendpoint id="ID1413377330"
                    serial="1">
-          <posattr x="-73.000000"
-                   y="-829.117500"/>
+          <posattr x="-115.522500"
+                   y="-325.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5542,8 +5587,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1413377329">
-          <posattr x="-93.000000"
-                   y="-730.000000"/>
+          <posattr x="-96.000000"
+                   y="-278.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5575,8 +5620,8 @@ else empty</text>
         <placeend idref="ID1413121025"/>
         <bendpoint id="ID1506610452"
                    serial="1">
-          <posattr x="-697.522500"
-                   y="-857.117500"/>
+          <posattr x="-672.000000"
+                   y="-313.117500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5587,8 +5632,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506610256">
-          <posattr x="-718.000000"
-                   y="-744.000000"/>
+          <posattr x="-692.000000"
+                   y="-270.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5618,10 +5663,10 @@ else empty</text>
                    currentcyckle="2"/>
         <transend idref="ID1413192878"/>
         <placeend idref="ID1413121025"/>
-        <bendpoint id="ID1506712208"
+        <bendpoint id="ID1506794834"
                    serial="1">
-          <posattr x="-42.000000"
-                   y="-267.117500"/>
+          <posattr x="-182.000000"
+                   y="-126.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5631,10 +5676,10 @@ else empty</text>
           <textattr colour="Black"
                     bold="false"/>
         </bendpoint>
-        <bendpoint id="ID1506744421"
+        <bendpoint id="ID1506712208"
                    serial="2">
-          <posattr x="11.477500"
-                   y="-525.117500"/>
+          <posattr x="-42.000000"
+                   y="-267.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5646,8 +5691,8 @@ else empty</text>
         </bendpoint>
         <bendpoint id="ID1506619795"
                    serial="3">
-          <posattr x="11.477500"
-                   y="-924.000000"/>
+          <posattr x="-42.000000"
+                   y="-378.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5660,7 +5705,7 @@ else empty</text>
         <bendpoint id="ID1506617811"
                    serial="4">
           <posattr x="-336.000000"
-                   y="-924.000000"/>
+                   y="-378.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5671,8 +5716,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506617809">
-          <posattr x="-121.000000"
-                   y="-175.000000"/>
+          <posattr x="-173.000000"
+                   y="-21.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5702,10 +5747,10 @@ else empty</text>
                    currentcyckle="2"/>
         <transend idref="ID1413147652"/>
         <placeend idref="ID1413089967"/>
-        <bendpoint id="ID1506622140"
+        <bendpoint id="ID1506805796"
                    serial="1">
-          <posattr x="-168.000000"
-                   y="-611.000000"/>
+          <posattr x="-210.000000"
+                   y="-360.117500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5715,23 +5760,10 @@ else empty</text>
           <textattr colour="Black"
                     bold="false"/>
         </bendpoint>
-        <bendpoint id="ID1506739010"
+        <bendpoint id="ID1506804897"
                    serial="2">
-          <posattr x="-188.522500"
-                   y="-588.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-        </bendpoint>
-        <bendpoint id="ID1506639320"
-                   serial="3">
-          <posattr x="-252.000000"
-                   y="-236.000000"/>
+          <posattr x="-735.522500"
+                   y="-360.117500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5742,8 +5774,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506622138">
-          <posattr x="-186.000000"
-                   y="-379.000000"/>
+          <posattr x="-697.000000"
+                   y="-153.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5775,8 +5807,8 @@ else empty</text>
         <placeend idref="ID1413089967"/>
         <bendpoint id="ID1506638558"
                    serial="1">
-          <posattr x="-653.522500"
-                   y="-168.000000"/>
+          <posattr x="-588.000000"
+                   y="16.882500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5787,8 +5819,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506627636">
-          <posattr x="-630.500000"
-                   y="-118.000000"/>
+          <posattr x="-549.500000"
+                   y="11.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5818,10 +5850,23 @@ else empty</text>
                    currentcyckle="2"/>
         <transend idref="ID1413099429"/>
         <placeend idref="ID1413089967"/>
-        <bendpoint id="ID1506638606"
+        <bendpoint id="ID1590676006"
                    serial="1">
-          <posattr x="-653.000000"
-                   y="-336.000000"/>
+          <posattr x="-420.000000"
+                   y="-140.117500"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+        </bendpoint>
+        <bendpoint id="ID1506638606"
+                   serial="2">
+          <posattr x="-641.522500"
+                   y="-140.117500"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5832,8 +5877,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506632112">
-          <posattr x="-513.500000"
-                   y="-362.000000"/>
+          <posattr x="-479.000000"
+                   y="-151.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5866,7 +5911,7 @@ else empty</text>
         <bendpoint id="ID1506638764"
                    serial="1">
           <posattr x="-294.000000"
-                   y="-147.117500"/>
+                   y="0.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -5877,8 +5922,8 @@ else empty</text>
                     bold="false"/>
         </bendpoint>
         <annot id="ID1506636879">
-          <posattr x="-308.000000"
-                   y="-138.000000"/>
+          <posattr x="-303.000000"
+                   y="27.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -6172,7 +6217,7 @@ action
       <constraints/>
     </page>
     <page id="ID1413027271">
-      <pageattr name="Autenticacao em cobertura"/>
+      <pageattr name="In-Coverage Authentication"/>
       <place id="ID1413027279">
         <posattr x="-234.000000"
                  y="420.000000"/>
@@ -7026,17 +7071,7 @@ else empty</text>
           <text>&lt;same as model&gt;</text>
         </value>
       </option>
-      <option name="extensions.10006.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10001.enable">
-        <value>
-          <boolean>true</boolean>
-        </value>
-      </option>
-      <option name="extensions.10003.enable">
+      <option name="extensions.10002.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7046,7 +7081,17 @@ else empty</text>
           <boolean>true</boolean>
         </value>
       </option>
-      <option name="extensions.10002.enable">
+      <option name="extensions.10003.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10001.enable">
+        <value>
+          <boolean>true</boolean>
+        </value>
+      </option>
+      <option name="extensions.10006.enable">
         <value>
           <boolean>true</boolean>
         </value>
@@ -7264,8 +7309,8 @@ else empty</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID1413292660"
-                    panx="202.522500"
-                    pany="-253.117500"
+                    panx="379.522500"
+                    pany="-142.117500"
                     zoom="1.000000"
                     instance="ID1412994338">
             <zorder>
@@ -7291,8 +7336,8 @@ else empty</text>
             </zorder>
           </cpnsheet>
           <cpnsheet id="ID2215"
-                    panx="-114.590000"
-                    pany="75.660000"
+                    panx="58.410000"
+                    pany="82.660000"
                     zoom="1.000000"
                     instance="ID2149">
             <zorder>
@@ -7310,12 +7355,12 @@ else empty</text>
           </cpnsheet>
         </sheets>
         <zorder>
-          <position value="0"/>
-          <position value="2"/>
           <position value="3"/>
+          <position value="2"/>
+          <position value="0"/>
           <position value="5"/>
-          <position value="1"/>
           <position value="4"/>
+          <position value="1"/>
         </zorder>
       </cpnbinder>
     </binders>
