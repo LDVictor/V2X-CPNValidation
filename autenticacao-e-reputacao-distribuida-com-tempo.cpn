@@ -111,10 +111,11 @@
         </color>
         <color id="ID1412849083">
           <id>MSG</id>
+          <timed/>
           <alias>
             <id>STRING</id>
           </alias>
-          <layout>colset MSG = STRING;</layout>
+          <layout>colset MSG = STRING timed;</layout>
         </color>
         <color id="ID1412350072">
           <id>VC</id>
@@ -135,8 +136,9 @@
         </color>
         <color id="ID1413161586">
           <id>IC</id>
+          <timed/>
           <real/>
-          <layout>colset IC = real;</layout>
+          <layout>colset IC = real timed;</layout>
         </color>
         <color id="ID1412847322">
           <id>V_MSG</id>
@@ -167,6 +169,7 @@
         </color>
         <color id="ID1413053591">
           <id>V_DATA</id>
+          <timed/>
           <product>
             <id>ID</id>
             <id>REP_SCORE</id>
@@ -174,21 +177,23 @@
             <id>T_APPROX</id>
             <id>D_APPROX</id>
           </product>
-          <layout>colset V_DATA = product ID * REP_SCORE * T_RAN * T_APPROX * D_APPROX;</layout>
+          <layout>colset V_DATA = product ID * REP_SCORE * T_RAN * T_APPROX * D_APPROX timed;</layout>
         </color>
         <color id="ID1413347000">
           <id>V_DATA_LIST</id>
+          <timed/>
           <list>
             <id>V_DATA</id>
           </list>
-          <layout>colset V_DATA_LIST = list V_DATA;</layout>
+          <layout>colset V_DATA_LIST = list V_DATA timed;</layout>
         </color>
         <color id="ID1413330579">
           <id>FPORS</id>
+          <timed/>
           <list>
             <id>FPOR</id>
           </list>
-          <layout>colset FPORS = list FPOR;</layout>
+          <layout>colset FPORS = list FPOR timed;</layout>
         </color>
         <color id="ID1413461188">
           <id>MPC</id>
@@ -469,17 +474,40 @@ else 4;</layout>
       </block>
       <block id="ID1506816762">
         <id>Time Funcions</id>
-        <ml id="ID1506825916">fun porDelay() = discrete(10000000, 25000000);
-          <layout>fun porDelay() = discrete(10000000, 25000000);</layout>
+        <ml id="ID1506829050">fun trustIcDelay() = discrete(6444, 6825);
+          <layout>fun trustIcDelay() = discrete(6444, 6825);</layout>
+        </ml>
+        <ml id="ID1506828915">fun icDelay() = discrete(55190, 56397);
+          <layout>fun icDelay() = discrete(55190, 56397);</layout>
+        </ml>
+        <ml id="ID1506828736">fun fporDelay() = discrete(7188, 7555);
+          <layout>fun fporDelay() = discrete(7188, 7555);</layout>
+        </ml>
+        <ml id="ID1506828631">fun dporDelay() = discrete(8695, 9110);
+          <layout>fun dporDelay() = discrete(8695, 9110);</layout>
+        </ml>
+        <ml id="ID1506828497">fun tporDelay() = discrete(9568, 9979);
+          <layout>fun tporDelay() = discrete(9568, 9979);</layout>
+        </ml>
+        <ml id="ID1506830820">fun porDelay() = tporDelay() + fporDelay() + 
+dporDelay();
+          <layout>fun porDelay() = tporDelay() + fporDelay() + 
+dporDelay();</layout>
+        </ml>
+        <ml id="ID1506828327">fun trustRepDelay() = discrete(7619, 8027);
+          <layout>fun trustRepDelay() = discrete(7619, 8027);</layout>
+        </ml>
+        <ml id="ID1506825916">fun swDelay() = discrete(10952, 11461);
+          <layout>fun swDelay() = discrete(10952, 11461);</layout>
         </ml>
         <ml id="ID1506823933">fun N2NDelay() = discrete(76264,77116);
           <layout>fun N2NDelay() = discrete(76264,77116);</layout>
         </ml>
-        <ml id="ID1506822852">fun checkDelay() = discrete(10000,50000);
-          <layout>fun checkDelay() = discrete(10000,50000);</layout>
+        <ml id="ID1506822852">fun checkDelay() = discrete(6000,7000);
+          <layout>fun checkDelay() = discrete(6000,7000);</layout>
         </ml>
-        <ml id="ID1506821768">fun proofDelay() = discrete(10000000, 25000000);
-          <layout>fun proofDelay() = discrete(10000000, 25000000);</layout>
+        <ml id="ID1506821768">fun proofDelay() = discrete(25364996, 25895448);
+          <layout>fun proofDelay() = discrete(25364996, 25895448);</layout>
         </ml>
         <ml id="ID1506817371">fun V2VDelay() = discrete(76264,77116);
           <layout>fun V2VDelay() = discrete(76264,77116);</layout>
@@ -529,8 +557,8 @@ else 4;</layout>
                 version="4.0.1">IDxV_MSG</text>
         </type>
         <initmark id="ID1413941473">
-          <posattr x="-226.500000"
-                   y="425.000000"/>
+          <posattr x="-239.500000"
+                   y="411.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -540,9 +568,7 @@ else 4;</layout>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">1`(1, (1, &quot;frvgvrf&quot;, 4.5, &quot;Highway X: Empty Traffic&quot;))@+V2VDelay()+++
-1`(2, (2, &quot;sdfe296nvb&quot;, 4.8, &quot;Highway Y: Empty Traffic&quot;))@+V2VDelay()+++
-1`(3, (3, &quot;d0sm94kzxc&quot;, 3.0, &quot;Highway Z: Autobahn&quot;))@+V2VDelay()</text>
+                version="4.0.1">1`(1, (1, &quot;sdfe296nvb&quot;, 4.5, &quot;Highway X: Empty Traffic&quot;))@+V2VDelay()</text>
         </initmark>
         <port id="ID1412869239"
               type="In">
@@ -2255,38 +2281,6 @@ action
                 version="4.0.1"/>
         </annot>
       </arc>
-      <arc id="ID1413853325"
-           orientation="PtoT"
-           order="1">
-        <posattr x="0.000000"
-                 y="0.000000"/>
-        <fillattr colour="White"
-                  pattern=""
-                  filled="false"/>
-        <lineattr colour="Black"
-                  thick="1"
-                  type="Solid"/>
-        <textattr colour="Black"
-                  bold="false"/>
-        <arrowattr headsize="1.200000"
-                   currentcyckle="2"/>
-        <transend idref="ID1413808504"/>
-        <placeend idref="ID1412965178"/>
-        <annot id="ID1413853326">
-          <posattr x="-107.000000"
-                   y="-199.000000"/>
-          <fillattr colour="White"
-                    pattern="Solid"
-                    filled="false"/>
-          <lineattr colour="Black"
-                    thick="0"
-                    type="Solid"/>
-          <textattr colour="Black"
-                    bold="false"/>
-          <text tool="CPN Tools"
-                version="4.0.1">v_msg</text>
-        </annot>
-      </arc>
       <arc id="ID1413854554"
            orientation="TtoP"
            order="1">
@@ -2433,6 +2427,38 @@ action
                     bold="false"/>
           <text tool="CPN Tools"
                 version="4.0.1">id</text>
+        </annot>
+      </arc>
+      <arc id="ID1506839416"
+           orientation="PtoT"
+           order="1">
+        <posattr x="0.000000"
+                 y="0.000000"/>
+        <fillattr colour="White"
+                  pattern=""
+                  filled="false"/>
+        <lineattr colour="Black"
+                  thick="1"
+                  type="Solid"/>
+        <textattr colour="Black"
+                  bold="false"/>
+        <arrowattr headsize="1.200000"
+                   currentcyckle="2"/>
+        <transend idref="ID1413808504"/>
+        <placeend idref="ID1412965178"/>
+        <annot id="ID1506839417">
+          <posattr x="-107.000000"
+                   y="-199.000000"/>
+          <fillattr colour="White"
+                    pattern="Solid"
+                    filled="false"/>
+          <lineattr colour="Black"
+                    thick="0"
+                    type="Solid"/>
+          <textattr colour="Black"
+                    bold="false"/>
+          <text tool="CPN Tools"
+                version="4.0.1">v_msg</text>
         </annot>
       </arc>
       <constraints/>
@@ -2886,7 +2912,7 @@ mensagem</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1412913006">
-          <posattr x="-650.500000"
+          <posattr x="-610.500000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -2897,7 +2923,7 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">@+checkDelay()</text>
         </time>
         <code id="ID1412913007">
           <posattr x="-630.500000"
@@ -2989,7 +3015,7 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if cvg then 1`v_msg else empty</text>
+                version="4.0.1">if true=false then 1`v_msg else empty</text>
         </annot>
       </arc>
       <arc id="ID1412890116"
@@ -3034,7 +3060,7 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if cvg then empty else 1`v_msg</text>
+                version="4.0.1">if true=false then empty else 1`v_msg</text>
         </annot>
       </arc>
       <arc id="ID1412918160"
@@ -3124,7 +3150,7 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if cvg then empty else 1`v_msg</text>
+                version="4.0.1">if true=true then empty else 1`v_msg</text>
         </annot>
       </arc>
       <arc id="ID1412925619"
@@ -3221,7 +3247,7 @@ mensagem</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">if cvg then 1`v_msg else empty</text>
+                version="4.0.1">if true=true then 1`v_msg else empty</text>
         </annot>
       </arc>
       <arc id="ID1413773171"
@@ -4504,8 +4530,8 @@ Multi-Party Computation</text>
           <text tool="CPN Tools"
                 version="4.0.1"/>
         </cond>
-        <time id="ID1413045996">
-          <posattr x="-368.500000"
+        <time id="ID1506829411">
+          <posattr x="-401.500000"
                    y="255.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4516,7 +4542,7 @@ Multi-Party Computation</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">@+porDelay()</text>
+                version="4.0.1"/>
         </time>
         <code id="ID1413045997">
           <posattr x="-381.500000"
@@ -4579,7 +4605,7 @@ Multi-Party Computation</text>
                 version="4.0.1"/>
         </cond>
         <time id="ID1413082227">
-          <posattr x="-459.500000"
+          <posattr x="-428.000000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4590,7 +4616,7 @@ Multi-Party Computation</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">@+swDelay()</text>
         </time>
         <code id="ID1413082228">
           <posattr x="-470.000000"
@@ -4656,8 +4682,8 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413099431">
-          <posattr x="-243.500000"
-                   y="-408.000000"/>
+          <posattr x="-215.000000"
+                   y="-402.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4667,7 +4693,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">@+trustRepDelay()</text>
         </time>
         <code id="ID1413099432">
           <posattr x="-170.500000"
@@ -4733,8 +4759,8 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413115651">
-          <posattr x="-625.500000"
-                   y="-574.000000"/>
+          <posattr x="-653.500000"
+                   y="-566.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4744,7 +4770,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">@+porDelay()</text>
         </time>
         <code id="ID1413115652">
           <posattr x="-560.000000"
@@ -4811,8 +4837,8 @@ action
 fpors &lt;&gt; []]</text>
         </cond>
         <time id="ID1413147654">
-          <posattr x="177.500000"
-                   y="-580.117500"/>
+          <posattr x="167.500000"
+                   y="-574.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
                     filled="false"/>
@@ -4822,7 +4848,7 @@ fpors &lt;&gt; []]</text>
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1"/>
+                version="4.0.1">@+icDelay()</text>
         </time>
         <code id="ID1413147655">
           <posattr x="243.000000"
@@ -4888,7 +4914,7 @@ action
                 version="4.0.1"/>
         </cond>
         <time id="ID1413192880">
-          <posattr x="242.500000"
+          <posattr x="245.500000"
                    y="-53.000000"/>
           <fillattr colour="White"
                     pattern="Solid"
@@ -4899,7 +4925,7 @@ action
           <textattr colour="Black"
                     bold="false"/>
           <text tool="CPN Tools"
-                version="4.0.1">@+checkDelay()</text>
+                version="4.0.1">@+trustIcDelay()</text>
         </time>
         <code id="ID1413223669">
           <posattr x="222.500000"
@@ -7873,79 +7899,79 @@ eval_node formula_13 InitNode;</text>
       </option>
     </options>
     <binders>
-      <cpnbinder id="ID1412850247"
-                 x="403"
-                 y="27"
-                 width="1920"
-                 height="989">
+      <cpnbinder id="ID1506842711"
+                 x="6"
+                 y="21"
+                 width="1622"
+                 height="901">
         <sheets>
-          <cpnsheet id="ID1506814504"
-                    panx="-97.000000"
-                    pany="123.000000"
-                    zoom="1.000000"
+          <cpnsheet id="ID1506842681"
+                    panx="-889.062500"
+                    pany="285.187500"
+                    zoom="1.250000"
                     instance="ID2149">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <cpnsheet id="ID1506818103"
-                    panx="227.000000"
-                    pany="96.000000"
+          <cpnsheet id="ID1506842734"
+                    panx="434.000000"
+                    pany="135.000000"
                     zoom="1.000000"
                     instance="ID1412869665">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <cpnsheet id="ID1506820175"
-                    panx="-423.000000"
-                    pany="122.000000"
-                    zoom="1.000000"
-                    instance="ID1413027310">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1506823041"
-                    panx="-680.000000"
-                    pany="619.000000"
-                    zoom="1.000000"
-                    instance="ID1413023036">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-          <cpnsheet id="ID1506825272"
-                    panx="-180.000000"
-                    pany="-82.000000"
+          <cpnsheet id="ID1506853932"
+                    panx="-153.000000"
+                    pany="-66.000000"
                     zoom="1.000000"
                     instance="ID1412977278">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
-          <cpnsheet id="ID1506825715"
-                    panx="-228.000000"
-                    pany="-99.000000"
-                    zoom="1.000000"
+          <cpnsheet id="ID1506854159"
+                    panx="-0.200000"
+                    pany="-96.200000"
+                    zoom="0.800000"
                     instance="ID1412994338">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506857557"
+                    panx="-177.000000"
+                    pany="137.000000"
+                    zoom="1.000000"
+                    instance="ID1413027310">
+            <zorder>
+              <position value="0"/>
+            </zorder>
+          </cpnsheet>
+          <cpnsheet id="ID1506843578"
+                    panx="-513.000000"
+                    pany="633.000000"
+                    zoom="1.000000"
+                    instance="ID1413023036">
             <zorder>
               <position value="0"/>
             </zorder>
           </cpnsheet>
         </sheets>
         <zorder>
-          <position value="3"/>
-          <position value="1"/>
+          <position value="2"/>
           <position value="4"/>
           <position value="5"/>
-          <position value="2"/>
+          <position value="1"/>
+          <position value="3"/>
           <position value="0"/>
         </zorder>
       </cpnbinder>
     </binders>
     <monitorblock name="Monitors"/>
-    <IndexNode expanded="true">
+    <IndexNode expanded="false">
       <IndexNode expanded="false"/>
       <IndexNode expanded="false"/>
       <IndexNode expanded="false">
@@ -8034,7 +8060,32 @@ eval_node formula_13 InitNode;</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="false">
+        <IndexNode expanded="true">
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
+          <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
@@ -8055,41 +8106,23 @@ eval_node formula_13 InitNode;</text>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
           <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="false"/>
-          <IndexNode expanded="true"/>
-          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="false"/>
         </IndexNode>
-        <IndexNode expanded="true">
+        <IndexNode expanded="false">
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
+          <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
           <IndexNode expanded="true"/>
